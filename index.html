@@ -7,6 +7,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Font Google  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -29,14 +34,10 @@
                         <img src="IMG/4tlix-logo-bg.png" alt="" class="d-inline-block align-text-top" id="bg-logo">
                     </a>
                 </div>
-
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                     aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-bar">
                         <li class="nav-item">
@@ -52,20 +53,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> CONTACT</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
                     </ul>
                     <div class="login">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -74,7 +61,7 @@
                                     <div class="input-group">
                                         <input type="search" class="form-control rounded-start" placeholder="Search"
                                             aria-label="Search" aria-describedby="search-addon" />
-                                        <button type="button" class="btn btn-primary"><i
+                                        <button type="button" class="btn btn-danger"><i
                                                 class="fa-solid fa-magnifying-glass"></i></button>
                                     </div>
                                 </form>
@@ -91,7 +78,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="offcanvas offcanvas-end" style="position: absolute;" tabindex="-1" id="offcanvasRight"
                     aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
@@ -107,109 +93,313 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="bg-slide">
+        <!-- slide -->
 
-        <div id="carouselExampleControls" class="carousel d-flex justify-content-center slide" data-bs-ride="carousel">
-            <div class="carousel-inner ">
-                <div class="d-flex slider">
+        <div class="hex">
+            <div id="carouselExampleControls" class="carousel slide d-flex justify-content-center "
+                data-bs-ride="carousel">
+                <div class="carousel-inner ">
+                    <div class="d-flex">
+                        <div class="carousel-item active item" style="height: 522px;">
+                            <div class="card mb-3 border border-0">
+                                <div class="row g-0">
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <div class="d-grid gap-2 d-md-block mb-1">
+                                                <button type="button"
+                                                    class="btn btn-primary btn-sm fw-bold">ACTION</button>
+                                                <button type="button"
+                                                    class="btn btn-danger btn-sm fw-bold">SCI-FI</button>
+                                                <button type="button"
+                                                    class="btn btn-secondary btn-sm fw-bold">ADVENTURE</button>
+                                            </div>
+                                            <h1 class="card-title Title">OBLIVION <span class="text-muted">2022</span>
+                                            </h1>
+                                            <div class="d-grid gap-2 d-md-block mb-1">
+                                                <a href="" class="btn me-2 text-danger">
+                                                    <i
+                                                        class="fa-solid fa-heart btn btn-outline-danger rounded-circle py-2"></i>
+                                                    Add To Favorite</a>
+                                                <a href="" class="btn me-2 text-danger">
+                                                    <i
+                                                        class="fa-solid fa-play btn btn-outline-danger rounded-circle py-2"></i>
+                                                    Watch Trailer</a>
+                                                <a href="" class="btn me-2 text-danger">
+                                                    <i
+                                                        class="fa-solid fa-share-nodes btn btn-outline-danger rounded-circle py-2"></i>
+                                                    Share</a>
+                                            </div>
+                                            <ul class="row text-light fw-bold">
+                                                <span class="my-4 fs-3"><i
+                                                        class="fa-solid fa-star text-warning fs-3"></i> 7/10</span>
+                                                <li class="col ">Run Time: 2h21</li>
+                                                <li class="col">Rated: PG-13</li>
+                                                <li class="col">Release: 1 May 2015</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="IMG/Poster/mv1.jpg" class="img-fluid rounded-start float-end me-2"
+                                            style="width: 250px;" alt="...">
+                                    </div>
 
-                    <div class="carousel-item active item">
-                        <div class="card mb-3" style="max-width: 900px;">
-                            <div class="row g-0">
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <div class="d-grid gap-2 d-md-block mb-1">
-                                            <button type="button" class="btn btn-primary btn-sm">ACTION</button>
-                                            <button type="button" class="btn btn-danger btn-sm">SCI-FI</button>
-                                            <button type="button" class="btn btn-secondary btn-sm">ADVENTURE</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item item" style="height: 522px;">
+                            <div class="card mb-3 border border-0">
+                                <div class="row g-0">
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <div class="d-grid gap-2 d-md-block mb-1">
+                                                <button type="button"
+                                                    class="btn btn-primary btn-sm fw-bold">ACTION</button>
+                                                <button type="button"
+                                                    class="btn btn-danger btn-sm fw-bold">SCI-FI</button>
+                                                <button type="button"
+                                                    class="btn btn-secondary btn-sm fw-bold">ADVENTURE</button>
+                                            </div>
+                                            <h1 class="card-title Title">OBLIVION <span class="text-muted">2022</span>
+                                            </h1>
+
+                                            <div class="d-grid gap-2 d-md-block mb-1">
+                                                <a href="" class="btn me-2 text-danger">
+                                                    <i
+                                                        class="fa-solid fa-heart btn btn-outline-danger rounded-circle py-2"></i>
+                                                    Add To Favorite</a>
+                                                <a href="" class="btn me-2 text-danger">
+                                                    <i
+                                                        class="fa-solid fa-play btn btn-outline-danger rounded-circle py-2"></i>
+                                                    Watch Trailer</a>
+                                                <a href="" class="btn me-2 text-danger">
+                                                    <i
+                                                        class="fa-solid fa-share-nodes btn btn-outline-danger rounded-circle py-2"></i>
+                                                    Share</a>
+                                            </div>
+                                            <ul class="row text-light fw-bold">
+                                                <span class="my-4 fs-3"><i
+                                                        class="fa-solid fa-star text-warning fs-3"></i> 7/10</span>
+                                                <li class="col ">Run Time: 2h21</li>
+                                                <li class="col">Rated: PG-13</li>
+                                                <li class="col">Release: 1 May 2015</li>
+                                            </ul>
                                         </div>
-                                        <h1 class="card-title">OBLIVION</h1>
-                                        
-                                        <div class="d-grid gap-2 d-md-block mb-1">
-                                            <a href="" class="me-2"><i class="fa-solid fa-heart"></i> Add To
-                                                Favorite</a>
-                                            <a href="" class="me-2"><i class="fa-solid fa-play"></i> Watch Trailer</a>
-                                            <a href="" class="me-2"><i class="fa-solid fa-share-nodes"></i> Share</a>
-                                        </div>
-                                        <ul class="row">
-                                            <span><i class="fa-solid fa-star"></i> 7/10</span>
-                                            <li class="col">Run Time: 2h21’</li>
-                                            <li class="col">Rated: PG-13</li>
-                                            <li class="col">Release: 1 May 2015</li>
-                                        </ul>
-                                        
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="IMG/Poster/mv2.jpg" class="img-fluid rounded-start float-end me-2"
+                                            style="width: 250px;" alt="...">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <img src="IMG/Poster/mv1.jpg" class="img-fluid rounded-start" style="width: 250px"
-                                        alt="...">
+                            </div>
+                        </div>
+                        <div class="carousel-item item" style="height: 522px;">
+                            <div class="card mb-3 border border-0">
+                                <div class="row g-0">
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <div class="d-grid gap-2 d-md-block mb-1">
+                                                <button type="button"
+                                                    class="btn btn-primary btn-sm fw-bold">ACTION</button>
+                                                <button type="button"
+                                                    class="btn btn-danger btn-sm fw-bold">SCI-FI</button>
+                                                <button type="button"
+                                                    class="btn btn-secondary btn-sm fw-bold">ADVENTURE</button>
+                                            </div>
+                                            <h1 class="card-title Title">OBLIVION <span class="text-muted">2022</span>
+                                            </h1>
+                                            <div class="d-grid gap-2 d-md-block mb-1">
+                                                <a href="" class="btn me-2 text-danger">
+                                                    <i
+                                                        class="fa-solid fa-heart btn btn-outline-danger rounded-circle py-2"></i>
+                                                    Add To Favorite</a>
+                                                <a href="" class="btn me-2 text-danger">
+                                                    <i
+                                                        class="fa-solid fa-play btn btn-outline-danger rounded-circle py-2"></i>
+                                                    Watch Trailer</a>
+                                                <a href="" class="btn me-2 text-danger">
+                                                    <i
+                                                        class="fa-solid fa-share-nodes btn btn-outline-danger rounded-circle py-2"></i>
+                                                    Share</a>
+                                            </div>
+                                            <ul class="row text-light fw-bold">
+                                                <span class="my-4 fs-3"><i
+                                                        class="fa-solid fa-star text-warning fs-3"></i> 7/10</span>
+                                                <li class="col ">Run Time: 2h21</li>
+                                                <li class="col">Rated: PG-13</li>
+                                                <li class="col">Release: 1 May 2015</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="IMG/Poster/mv3.jpg" class="img-fluid rounded-start float-end me-2"
+                                            style="width: 250px;" alt="...">
+                                    </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
-                    <!-- <div class="carousel-item item">
-                        <div class="card mb-3" style="max-width: 900px;">
-                            <div class="row g-0">
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a
-                                            natural lead-in to additional content. This content is a little bit longer.
-                                        </p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="IMG/Poster/mv2.jpg" class="img-fluid rounded-start" alt="...">
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item item">
-                        <div class="card mb-3" style="max-width: 900px;">
-                            <div class="row g-0">
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a
-                                            natural lead-in to additional content. This content is a little bit longer.
-                                        </p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="IMG/Poster/mv3.jpg" class="img-fluid rounded-start" alt="...">
-                                </div>
-
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <i class="fa-solid fa-chevron-left fs-1"></i>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <i class="fa-solid fa-chevron-right fs-1"></i>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"
-                    style="background-color: black; size: 15px;"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: black;"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        </div>
+        <div class="bg"></div>
+
+        <!-- Product -->
+        <div class="movies-items">
+            <div class="row row-cols-1 row-cols-md-6 g-4 mx-3 my-5">
+
+                <div class="col my-4 d-flex justify-content-center">
+                    <div class="card cardMovies" style="width:250px">
+                        <img class="card-img-top img-fluid" src="IMG/Poster/mv1.jpg" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col my-4 d-flex justify-content-center">
+                    <div class="card cardMovies" style="width:250px">
+                        <img class="card-img-top img-fluid" src="IMG/Poster/mv1.jpg" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col my-4 d-flex justify-content-center">
+                    <div class="card cardMovies" style="width:250px">
+                        <img class="card-img-top img-fluid" src="IMG/Poster/mv1.jpg" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col my-4 d-flex justify-content-center">
+                    <div class="card cardMovies" style="width:250px">
+                        <img class="card-img-top img-fluid" src="IMG/Poster/mv1.jpg" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col my-4 d-flex justify-content-center">
+                    <div class="card cardMovies" style="width:250px">
+                        <img class="card-img-top img-fluid" src="IMG/Poster/mv1.jpg" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col my-4 d-flex justify-content-center">
+                    <div class="card cardMovies" style="width:250px">
+                        <img class="card-img-top img-fluid" src="IMG/Poster/mv1.jpg" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col my-4 d-flex justify-content-center">
+                    <div class="card cardMovies" style="width:250px">
+                        <img class="card-img-top img-fluid" src="IMG/Poster/mv1.jpg" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col my-4 d-flex justify-content-center">
+                    <div class="card cardMovies" style="width:250px">
+                        <img class="card-img-top img-fluid" src="IMG/Poster/mv1.jpg" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col my-4 d-flex justify-content-center">
+                    <div class="card cardMovies" style="width:250px">
+                        <img class="card-img-top img-fluid" src="IMG/Poster/mv1.jpg" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col my-4 d-flex justify-content-center">
+                    <div class="card cardMovies" style="width:250px">
+                        <img class="card-img-top img-fluid" src="IMG/Poster/mv1.jpg" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col my-4 d-flex justify-content-center">
+                    <div class="card cardMovies" style="width:250px">
+                        <img class="card-img-top img-fluid" src="IMG/Poster/mv1.jpg" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col my-4 d-flex justify-content-center">
+                    <div class="card cardMovies" style="width:250px">
+                        <img class="card-img-top img-fluid" src="IMG/Poster/mv1.jpg" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+        <!-- End Product -->
+
+        <div class="trailers-items">
+            <h1>trailers</h1>
         </div>
 
+        <div class="latests-items">
+            <h1>latests</h1>
+        </div>
     </main>
     <footer>
         <!-- place footer here -->
+        <h1>footer</h1>
     </footer>
 
     <!-- Bootstrap JavaScript Libraries -->
+    <script>
+        const Root = document.querySelector(".bg-slide");
+        const BG = document.querySelector(".bg");
+
+        Root.addEventListener("mousemove", function (e) {
+            BG.style.left = `${e.clientX}px`;
+            BG.style.top = `${e.clientY}px`;
+        });
+    </script>
+
+    <script type="text/javascript" src="JS/vanilla-tilt.js"></script>
+
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".cardMovies"), {
+            max: 25,
+            speed: 400
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
         </script>
@@ -217,6 +407,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
+
+
 </body>
 
 </html>

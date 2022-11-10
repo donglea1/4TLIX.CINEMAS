@@ -1,55 +1,177 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x:hidden;
+    width: 100%;
+}
 
-.navbar-nav li a{
+header {
+    position: relative;
+    z-index: 1;
+}
+
+.navbar-nav li a {
     color: #fff;
 }
 
-#carouselExampleFade span{
+#carouselExampleFade span {
     color: black;
 }
 
-.bg-opacity{
+.bg-opacity {
     position: relative;
     background-color: #000;
     height: 875px;
     width: auto;
 }
-.logo{
+
+.logo {
     height: 65px;
 }
-.logo>img{
+
+.logo>img {
     position: absolute;
     width: 20%;
 }
-.logo>img:hover{
+
+.logo>img:hover {
     z-index: 0;
     background: url("../IMG/newlogo.gif");
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    filter: drop-shadow(0 0 5px red);
 }
-.nav-item>a{
+
+.nav-item>a {
     color: #fff;
     font-weight: bold;
 }
-#SIGN-UP{
+
+#SIGN-UP {
     background-color: #dd003f;
 }
-#btn-navbar{
-    border: #fff solid 1px;
-}
-#nav-bar{
+
+#nav-bar {
     margin-left: 22%;
 }
-.slider{
-    height: 600px;
-    width: 100%;
-    border: 1px solid red;
-    align-items: center;
-    
-}
-.item{
-    left: 25%;
+
+.item {
+    left: 24%;
     height: 65%;
-    
+
+}
+
+.hex .card {
+    max-width: 1000px;
+    max-height: 390px;
+    top: 85px;
+    background-color: transparent;
+}
+
+.Title {
+    font-family: 'Dosis', sans-serif;
+    font-size: 60px;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 60px;
+}
+
+.Title span {
+    font-family: 'Dosis', sans-serif;
+    font-size: 36px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.bg-slide {
+    height: 235vh;
+    width: 100%;
+    border: 1px solid green;
+    align-items: center;
+    background-color: #000;
+    position: relative;
+}
+
+.hex {
+    background: url(../IMG/BG/hexagon.svg) repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 500px;
+    z-index: 1;
+}
+
+.bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-65%, -65%);
+    height: 300px;
+    width: 300px;
+    background: linear-gradient(90deg, black 0%, red 100%);
+    filter: blur(20px);
+    z-index: 0;
+}
+
+.movies-items{
+    position: relative;
+    background-color: #fff;
+    border: 2px solid yellow;
+    z-index: 1;
+    height: 130vh;
+    width: 100%;
+    top: 24%;
+}
+
+.movies-items .card{
+    overflow: hidden;
+    display: flex;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.movies-items .card .btn{
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.movies-items .card:hover .btn{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.trailers-items{
+    top: 10%;
+    position: relative;
+    background-color: #f2f6f8;
+    z-index: 1;
+    height: 500px;
+    width: 100%;
+}
+
+.latests-items{
+    top: 10%;
+    position: relative;
+    background-color: #fff;
+    border: 2px solid orchid;
+    z-index: 1;
+    height: 500px;
+    width: 100%;
+}
+
+footer{
+    position: relative;
+    z-index: 1;
+    border: 2px solid red;
+    height: 400px;
+    width: 100%;
 }

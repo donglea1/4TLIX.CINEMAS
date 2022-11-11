@@ -1,11 +1,6 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x:hidden;
-    width: 100%;
+body{
+    overflow-x: hidden;
 }
-
 header {
     position: relative;
     z-index: 1;
@@ -64,13 +59,6 @@ header {
 
 }
 
-.hex .card {
-    max-width: 1000px;
-    max-height: 390px;
-    top: 85px;
-    background-color: transparent;
-}
-
 .Title {
     font-family: 'Dosis', sans-serif;
     font-size: 60px;
@@ -88,9 +76,8 @@ header {
 }
 
 .bg-slide {
-    height: 235vh;
+    height: 245vh;
     width: 100%;
-    border: 1px solid green;
     align-items: center;
     background-color: #000;
     position: relative;
@@ -98,20 +85,27 @@ header {
 
 .hex {
     background: url(../IMG/BG/hexagon.svg) repeat;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-size: 500px;
+    height: 21%;
+    background-size: 425px;
     z-index: 1;
+}
+
+.hex .card {
+    max-width: 50%;
+    max-height: 390px;
+    top: 85px;
+    background-color: transparent;
 }
 
 .bg {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-65%, -65%);
+    transform: translate(-55%, -65%);
     height: 300px;
     width: 300px;
     background: linear-gradient(90deg, black 0%, red 100%);
@@ -119,17 +113,14 @@ header {
     z-index: 0;
 }
 
-.movies-items{
+.movies-items {
     position: relative;
     background-color: #fff;
-    border: 2px solid yellow;
     z-index: 1;
-    height: 130vh;
-    width: 100%;
-    top: 24%;
 }
 
-.movies-items .card{
+.movies-items .card {
+    position: relative;
     overflow: hidden;
     display: flex;
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
@@ -138,40 +129,99 @@ header {
     backdrop-filter: blur(5px);
 }
 
-.movies-items .card .btn{
+.cardMovies>h4 {
+    font-family: 'Dosis', sans-serif;
+    top: 80%;
+    left: 10%;
+    opacity: 1;
+}
+
+.cardMovies>p {
+    font-family: 'Dosis', sans-serif;
+    top: 88%;
+    left: 10%;
+}
+
+.movies-items .card .btn {
     transform: translateY(100px);
     opacity: 0;
     transition: 0.5s;
 }
 
-.movies-items .card:hover .btn{
+.movies-items .card:hover .btn {
     transform: translateY(0px);
     opacity: 1;
 }
 
-.trailers-items{
-    top: 10%;
-    position: relative;
-    background-color: #f2f6f8;
+.movies-items>h2 {
+    font-family: 'Dosis', sans-serif;
+}
+
+.trailers-items {
     z-index: 1;
-    height: 500px;
+    height: 40%;
     width: 100%;
 }
 
-.latests-items{
-    top: 10%;
-    position: relative;
+.trailers-items>h1 {
+    font-family: 'Dosis', sans-serif;
+}
+
+.control-trailers {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 20px;
+    right: 10px;
+    left: auto;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+}
+
+.items-trailers {
+    height: 90%;
+
+}
+
+.info-trailer {
+    height: 20%;
+    width: 90%;
+}
+
+.latests {
     background-color: #fff;
-    border: 2px solid orchid;
     z-index: 1;
     height: 500px;
     width: 100%;
 }
 
-footer{
+.footer {
     position: relative;
     z-index: 1;
-    border: 2px solid red;
-    height: 400px;
+    height: 300px;
     width: 100%;
+    top: 10%;
+}
+
+.footer .col{
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    color: #abb7c4;
+}
+.footer h5{
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+}
+
+.footer ul li a{
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    color: #abb7c4;
+}
+
+.footer ul li a:hover{
+    color: #e1f80c;
 }

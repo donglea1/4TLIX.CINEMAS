@@ -1,0 +1,78 @@
+.bg-profile {
+    background: url(../IMG/BG/ft-bg.jpg) no-repeat;
+    z-index: 1;
+    height: 300px;
+}
+
+.profile {
+    height: 730px;
+    background: #020d18;
+}
+
+.user-infor {
+    border: 3px solid #0f2133;
+    margin-right: 30px;
+    margin-top: -520px;
+    background: #020d18;
+    border-radius: 5px;
+    z-index: 1;
+    font-family: 'Dosis', sans-serif;
+    height: 650px;
+}
+
+.user-fav {
+    border-top: 1px solid #0f2133;
+    padding: 25px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.user-fav ul li a {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: snow;
+}
+
+.user-fav ul li a:hover {
+    color: #e1f80c;
+}
+
+.user-fav p {
+    color: #abb7c4;
+    font-family: 'Nunito', sans-serif;
+}
+
+.user-form {
+    margin-top: -350px;
+    z-index: 1;
+
+}
+
+.user-form h1 {
+    font-family: 'Dosis', sans-serif;
+}
+
+.user-form-input {
+    border: 3px solid #0f2133;
+    border-radius: 5px;
+    background: #0b1a2a;
+    height: 640px;
+}
+
+.user-form-input form input{
+    background-color: #233a50;
+    border: none;
+    height: 40px;
+}
+.user-form-input form select{
+    background-color: #233a50;
+    border: none;
+    height: 40px;
+    color: #abb7c4;
+}
+
+.form-label {
+    color: #abb7c4;
+}
+form button{
+    width: 100px;
+}

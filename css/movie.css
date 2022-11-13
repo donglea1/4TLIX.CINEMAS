@@ -1,0 +1,117 @@
+.bg-movie {
+    background: url(../IMG/BG/hero-bg.jpg) no-repeat;
+    height: 400px;
+    background-position: center center;
+}
+
+.opaci::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.movie {
+    height: 900px;
+}
+
+.movie-single>h1 {
+    font-family: 'Dosis', sans-serif;
+}
+
+.movie-single {
+    width: 700px;
+}
+
+.movie-rate i {
+    font-size: 25px;
+}
+
+.movie-tabs ul li {
+    margin-right: 5%;
+}
+
+.movie-tabs ul li .nav-link {
+    border: unset;
+}
+
+.movie-tabs ul li .nav-link.active {
+    background-color: unset;
+    border: unset;
+    border-bottom: 3px solid #dcf836;
+
+}
+
+.movie-tabs ul li .nav-link:hover {
+    border: unset;
+    border-bottom: 3px solid #dcf836;
+}
+
+.mv-single-item a {
+    transition: 0.5s;
+}
+
+.mv-single-item a:hover {
+    filter: brightness(115%);
+}
+
+.item-btn {
+    backface-visibility: hidden;
+    transition: transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    text-transform: uppercase;
+}
+
+.item-btn>a {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+}
+
+.item-1 {
+    transform: rotateX(0deg);
+}
+
+.item-2 {
+    transform: rotateX(180deg);
+}
+
+.btn-transform:hover .item-1 {
+    transform: rotateX(180deg);
+}
+
+.btn-transform:hover .item-2 {
+    transform: rotateX(0deg);
+}
+
+.cast-it a {
+    text-decoration: none;
+    color: #4280bf;
+}
+
+.cast-it a:hover {
+    color: #dc3545;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+}
+
+.sb-it a {
+    text-decoration: none;
+    color: #4280bf;
+    font-family: 'Dosis', sans-serif;
+}
+
+.sb-it a:hover{
+    color: #dc3545;
+}
+
+.sb-it h6 {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+}
+
+.sb-it p {
+    width: 200px;
+}

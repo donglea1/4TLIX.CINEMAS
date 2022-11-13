@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>HOME</title>
+    <link rel="icon" type="image/x-icon" href="IMG/Icon_app.png">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,12 +25,12 @@
 </head>
 
 <body>
-    <header>
+    <header class="sticky-top" style="z-index: 2;">
         <!-- place navbar here -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <div class="logo">
-                    <a class="navbar-brand logo" href="#">
+                    <a class="navbar-brand logo" href="index.html">
                         <img src="IMG/4tlix-logo.png" alt="" class="d-inline-block align-text-top" id="logo">
                         <img src="IMG/4tlix-logo-bg.png" alt="" class="d-inline-block align-text-top" id="bg-logo">
                     </a>
@@ -61,7 +62,7 @@
                                     <div class="input-group">
                                         <input type="search" class="form-control rounded-start" placeholder="Search"
                                             aria-label="Search" aria-describedby="search-addon" />
-                                        <button type="button" class="btn btn-danger"><i
+                                        <button type="button" class="btn btn-danger w-25"><i
                                                 class="fa-solid fa-magnifying-glass"></i></button>
                                     </div>
                                 </form>
@@ -70,10 +71,16 @@
                                 <a class="nav-link" aria-current="page" href="#">HELP</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">SIGN IN</a>
+                                <button type="button" class="btn text-light fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#Login">
+                                    LOG IN
+                                </button>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link rounded-4" aria-current="page" href="#" id="SIGN-UP">SIGN UP</a>
+                                <button type="button" class="btn btn-danger rounded-4 fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#SignUp">
+                                    SIGN UP
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -93,6 +100,95 @@
             </div>
         </nav>
     </header>
+
+    <!-- Modal Sign In -->
+    <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="width: 85%;">
+                <div class="modal-header border border-0 justify-content-center">
+                    <h1 class="modal-title fs-5 text-uppercase fw-bold" id="exampleModalLabel">Login</h1>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Username</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="**********">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                            <label class="float-end mt-1" for=""><a href=""
+                                    class="text-dark text-decoration-none">Forget password ?</a></label>
+                        </div>
+                        <div class="mb-3 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-danger w-100">Log In</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-block border border-0">
+                    <div class="mb-3">
+                        <p>Or via social</p>
+                    </div>
+                    <div class="row">
+                        <div class="col"> <button type="button" class="w-100 btn btn-primary fw-bold text-uppercase"><i
+                                    class="fa-brands fa-facebook-f"></i> Facebook</button>
+                        </div>
+                        <div class="col"> <button type="button"
+                                class="w-100 btn btn-info text-light fw-bold text-uppercase"><i
+                                    class="fa-brands fa-twitter"></i> twitter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sign Up -->
+    <div class="modal fade" id="SignUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border border-0 justify-content-center">
+                    <h1 class="modal-title fs-5 text-uppercase fw-bold" id="exampleModalLabel">Sign Up</h1>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Username</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">Fullname</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">RE-TYPE PASSWORD</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="mt-2 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-danger w-100 text-uppercase">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main class="bg-slide">
 
         <!-- Slide -->
@@ -147,7 +243,7 @@
                             </div>
                         </div>
 
-                        <div class="carousel-item active item" style="height: 522px;">
+                        <div class="carousel-item item" style="height: 522px;">
                             <div class="card mb-3 border border-0">
                                 <div class="row g-0">
                                     <div class="col-md-8">
@@ -159,7 +255,8 @@
                                                 <button type="button"
                                                     class="btn btn-secondary btn-sm fw-bold">ADVENTURE</button>
                                             </div>
-                                            <h1 class="card-title Title">into the wild <span class="text-muted">2022</span>
+                                            <h1 class="card-title Title">into the wild <span
+                                                    class="text-muted">2022</span>
                                             </h1>
                                             <div class="d-grid gap-2 d-md-block mb-1">
                                                 <a href="" class="btn me-2 text-danger">
@@ -192,7 +289,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item active item" style="height: 522px;">
+                        <div class="carousel-item item" style="height: 522px;">
                             <div class="card mb-3 border border-0">
                                 <div class="row g-0">
                                     <div class="col-md-8">
@@ -270,7 +367,7 @@
                     <p class="card-text position-absolute text-light"><span class="fs-4"><i
                                 class="fa-solid fa-star text-warning fs-6"></i> 7</span>/10</p>
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                        <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        <a href="movie.html" class="btn btn-danger text-uppercase rounded-pill">read more</a>
                     </div>
                 </div>
 
@@ -282,7 +379,7 @@
                     <p class="card-text position-absolute text-light"><span class="fs-4"><i
                                 class="fa-solid fa-star text-warning fs-6"></i> 7</span>/10</p>
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                        <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        <a href="movie.html" class="btn btn-danger text-uppercase rounded-pill">read more</a>
                     </div>
                 </div>
                 <div class="product cardMovies card d-flex justify-content-center align-items-center mx-5 my-5"
@@ -293,7 +390,7 @@
                     <p class="card-text position-absolute text-light"><span class="fs-4"><i
                                 class="fa-solid fa-star text-warning fs-6"></i> 7</span>/10</p>
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                        <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        <a href="movie.html" class="btn btn-danger text-uppercase rounded-pill">read more</a>
                     </div>
                 </div>
                 <div class="product cardMovies card d-flex justify-content-center align-items-center mx-5 my-5"
@@ -304,7 +401,7 @@
                     <p class="card-text position-absolute text-light"><span class="fs-4"><i
                                 class="fa-solid fa-star text-warning fs-6"></i> 7</span>/10</p>
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                        <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        <a href="movie.html" class="btn btn-danger text-uppercase rounded-pill">read more</a>
                     </div>
                 </div>
                 <div class="product cardMovies card d-flex justify-content-center align-items-center mx-5 my-5"
@@ -315,7 +412,7 @@
                     <p class="card-text position-absolute text-light"><span class="fs-4"><i
                                 class="fa-solid fa-star text-warning fs-6"></i> 7</span>/10</p>
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                        <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        <a href="movie.html" class="btn btn-danger text-uppercase rounded-pill">read more</a>
                     </div>
                 </div>
                 <div class="product cardMovies card d-flex justify-content-center align-items-center mx-5 my-5"
@@ -326,7 +423,7 @@
                     <p class="card-text position-absolute text-light"><span class="fs-4"><i
                                 class="fa-solid fa-star text-warning fs-6"></i> 7</span>/10</p>
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                        <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        <a href="movie.html" class="btn btn-danger text-uppercase rounded-pill">read more</a>
                     </div>
                 </div>
                 <div class="product cardMovies card d-flex justify-content-center align-items-center mx-5 my-5"
@@ -337,7 +434,7 @@
                     <p class="card-text position-absolute text-light"><span class="fs-4"><i
                                 class="fa-solid fa-star text-warning fs-6"></i> 7</span>/10</p>
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                        <a href="#" class="btn btn-danger text-uppercase rounded-pill">read more</a>
+                        <a href="movie.html" class="btn btn-danger text-uppercase rounded-pill">read more</a>
                     </div>
                 </div>
             </div>

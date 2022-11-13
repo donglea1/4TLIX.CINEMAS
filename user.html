@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>USER</title>
+    <link rel="icon" type="image/x-icon" href="IMG/Icon_app.png">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,12 +26,12 @@
 </head>
 
 <body>
-    <header>
+    <header class="sticky-top" style="z-index: 2;">
         <!-- place navbar here -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <div class="logo">
-                    <a class="navbar-brand logo" href="#">
+                    <a class="navbar-brand logo" href="index.html">
                         <img src="IMG/4tlix-logo.png" alt="" class="d-inline-block align-text-top" id="logo">
                         <img src="IMG/4tlix-logo-bg.png" alt="" class="d-inline-block align-text-top" id="bg-logo">
                     </a>
@@ -62,7 +63,7 @@
                                     <div class="input-group">
                                         <input type="search" class="form-control rounded-start" placeholder="Search"
                                             aria-label="Search" aria-describedby="search-addon" />
-                                        <button type="button" class="btn btn-danger"><i
+                                        <button type="button" class="btn btn-danger w-25"><i
                                                 class="fa-solid fa-magnifying-glass"></i></button>
                                     </div>
                                 </form>
@@ -71,10 +72,16 @@
                                 <a class="nav-link" aria-current="page" href="#">HELP</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">SIGN IN</a>
+                                <button type="button" class="btn text-light fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#Login">
+                                    LOG IN
+                                </button>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link rounded-4" aria-current="page" href="#" id="SIGN-UP">SIGN UP</a>
+                                <button type="button" class="btn btn-danger rounded-4 fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#SignUp">
+                                    SIGN UP
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -94,8 +101,99 @@
             </div>
         </nav>
     </header>
-    <main class="position-relative">
 
+    <!-- Modal Sign In -->
+    <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="width: 85%;">
+                <div class="modal-header border border-0 justify-content-center">
+                    <h1 class="modal-title fs-5 text-uppercase fw-bold" id="exampleModalLabel">Login</h1>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Username</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="**********">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                            <label class="float-end mt-1" for=""><a href=""
+                                    class="text-dark text-decoration-none">Forget password ?</a></label>
+                        </div>
+                        <div class="mb-3 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-danger w-100">Log In</button>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-block border border-0">
+                    <div class="mb-3">
+                        <p>Or via social</p>
+                    </div>
+                    <div class="row">
+                        <div class="col"> <button type="button"
+                                class="w-100 btn btn-primary fw-bold text-uppercase"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
+                        </div>
+                        <div class="col"> <button type="button"
+                                class="w-100 btn btn-info text-light fw-bold text-uppercase"><i class="fa-brands fa-twitter"></i> twitter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sign Up -->
+    <div class="modal fade" id="SignUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border border-0 justify-content-center">
+                    <h1 class="modal-title fs-5 text-uppercase fw-bold" id="exampleModalLabel">Sign Up</h1>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Username</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">Fullname</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1"
+                                placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">RE-TYPE PASSWORD</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="">
+                        </div>
+                        <div class="mt-2 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-danger w-100 text-uppercase">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="position-relative">
         <!-- Profile -->
         <div class="bg-profile position-relative bg-dark w-100">
         </div>
@@ -187,7 +285,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <button type="submit" class="btn btn-danger text-uppercase fw-bold rounded-pill">save</button>
+                                        <button type="submit"
+                                            class="btn btn-danger text-uppercase fw-bold rounded-pill">save</button>
                                     </div>
                                 </div>
                             </form>
@@ -209,12 +308,13 @@
                                         <label for="email" class="form-label">Confirm New Password:</label>
                                         <input type="text" class="form-control" placeholder="First name" name="email">
                                     </div>
-                                    
+
                                 </div>
-                               
+
                                 <div class="row">
                                     <div class="col">
-                                        <button type="submit" class="btn btn-danger text-uppercase fw-bold rounded-pill">change</button>
+                                        <button type="submit"
+                                            class="btn btn-danger text-uppercase fw-bold rounded-pill">change</button>
                                     </div>
                                 </div>
                             </form>
@@ -287,26 +387,6 @@
     </main>
 
     <!-- Bootstrap JavaScript Libraries -->
-    <script>
-        const Root = document.querySelector(".bg-slide");
-        const BG = document.querySelector(".bg");
-
-        Root.addEventListener("mousemove", function (e) {
-            BG.style.left = `${e.clientX}px`;
-            BG.style.top = `${e.clientY}px`;
-        });
-    </script>
-
-    <script type="text/javascript" src="JS/vanilla-tilt.js"></script>
-    <script type="text/javascript">
-        VanillaTilt.init(document.querySelectorAll(".product"), {
-            max: 25,
-            speed: 400
-        });
-    </script>
-
-
-    <script type="text/javascript" src="JS/jquery-3.6.1.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

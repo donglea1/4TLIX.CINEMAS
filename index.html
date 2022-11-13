@@ -216,7 +216,7 @@
                                                     <i
                                                         class="fa-solid fa-heart btn btn-outline-danger rounded-circle py-2"></i>
                                                     Add To Favorite</a>
-                                                <a href="" class="btn me-2 text-danger">
+                                                <a href="" class="btn me-2 text-danger" data-bs-toggle="modal" data-bs-target="#trailerMV">
                                                     <i
                                                         class="fa-solid fa-play btn btn-outline-danger rounded-circle py-2"></i>
                                                     Watch Trailer</a>
@@ -242,7 +242,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="carousel-item item" style="height: 522px;">
                             <div class="card mb-3 border border-0">
                                 <div class="row g-0">
@@ -263,7 +262,7 @@
                                                     <i
                                                         class="fa-solid fa-heart btn btn-outline-danger rounded-circle py-2"></i>
                                                     Add To Favorite</a>
-                                                <a href="" class="btn me-2 text-danger">
+                                                <a href="" class="btn me-2 text-danger" data-bs-toggle="modal" data-bs-target="#trailerMV">
                                                     <i
                                                         class="fa-solid fa-play btn btn-outline-danger rounded-circle py-2"></i>
                                                     Watch Trailer</a>
@@ -308,7 +307,7 @@
                                                     <i
                                                         class="fa-solid fa-heart btn btn-outline-danger rounded-circle py-2"></i>
                                                     Add To Favorite</a>
-                                                <a href="" class="btn me-2 text-danger">
+                                                <a href="" class="btn me-2 text-danger" data-bs-toggle="modal" data-bs-target="#trailerMV">
                                                     <i
                                                         class="fa-solid fa-play btn btn-outline-danger rounded-circle py-2"></i>
                                                     Watch Trailer</a>
@@ -710,6 +709,26 @@
         <!-- End Footer -->
 
     </main>
+
+    <!-- Modal Trailer -->
+    <div class="modal fade" id="trailerMV" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header position-relative border-0">
+                    <button type="button"
+                        class="rounded-circle bg-light position-absolute d-flex justify-content-center align-items-center"
+                        style="height: 34px;width: 33px;;right: -20px;top: -20px;" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <i class="fa-solid fa-circle-xmark fs-4"></i>
+                    </button>
+                    <div class="ratio ratio-4x3">
+                        <iframe src="https://www.youtube.com/embed/940MBWt821A" title="YouTube video"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script>

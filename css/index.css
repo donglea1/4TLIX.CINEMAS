@@ -1,4 +1,4 @@
-body{
+body {
     overflow-x: hidden;
 }
 
@@ -31,6 +31,25 @@ body{
     font-weight: bold;
 }
 
+.btn-nav{
+    width: 20%;
+    transition: 0.5s;
+}
+
+.b1{
+    background: -webkit-linear-gradient(transparent 50%, #dc3545 50%);
+    background-size: 200px 160px;
+    bottom: 34px;
+}
+
+.b1:hover{
+    background-position: 0px 115px;
+}
+
+.btn-nav:hover{
+    color: #dd003f;
+}
+
 #SIGN-UP {
     background-color: #dd003f;
 }
@@ -45,14 +64,14 @@ body{
 
 .Title {
     font-family: 'Dosis', sans-serif;
-    
+
     color: #ffffff;
     text-transform: uppercase;
 }
 
 .Title span {
     font-family: 'Dosis', sans-serif;
-    
+
     text-transform: uppercase;
 }
 
@@ -172,15 +191,15 @@ body{
     width: 100%;
 }
 
-.hov-scale{
+.hov-scale {
     overflow: hidden;
 }
 
-.hov-scale img{
+.hov-scale img {
     transition: all 1.5s ease;
 }
 
-.hov-scale img:hover{
+.hov-scale img:hover {
     transform: scale(1.2);
 }
 
@@ -193,22 +212,23 @@ body{
     top: 10%;
 }
 
-.footer .col{
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
-    color: #abb7c4;
-}
-.footer h5{
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
-}
-
-.footer ul li a{
+.footer .col {
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
     color: #abb7c4;
 }
 
-.footer ul li a:hover{
+.footer h5 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+}
+
+.footer ul li a {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    color: #abb7c4;
+}
+
+.footer ul li a:hover {
     color: #e1f80c;
 }

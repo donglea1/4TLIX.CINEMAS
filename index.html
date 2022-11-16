@@ -30,11 +30,11 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <div class="logo-mobile d-lg-none">
-                    <img src="IMG/4tlix-logo.png" style="width: 280px;" alt="">
+                    <a href="index.html">
+                        <img src="IMG/4tlix-logo.png" style="width: 280px;" alt=""></a>
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#demo" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -52,20 +52,20 @@
                         <div class="col-9 ms-2">
                             <div class="row">
                                 <div class="col-6">
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <ul class="navbar-nav me-auto ms-3 mb-2 mb-lg-0">
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i>
+                                        <li class="nav-item btn-nav b1">
+                                            <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i>
                                                 HOME</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item btn-nav b1">
                                             <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i>
                                                 MOVIES</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item btn-nav b1">
                                             <a class="nav-link" href="#"><i class="fa-solid fa-star"></i> NEW</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item btn-nav b1">
                                             <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> CONTACT</a>
                                         </li>
                                     </ul>
@@ -113,13 +113,63 @@
     <!-- Offcanvas Sidebar -->
     <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
         <div class="offcanvas-header">
-            <h1 class="offcanvas-title">Heading</h1>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+            <h1 class="offcanvas-title">Menu</h1>
+            <button type="button" class="btn-close bg-light text-reset" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
-            <p>Some text lorem ipsum.</p>
-            <p>Some text lorem ipsum.</p>
-            <button class="btn btn-secondary" type="button">A Button</button>
+            <div class="row d-flex">
+                <div class="col-12 d-flex flex-row-reverse">
+                    <div class="login w-100">
+                        <li class="nav-item list-unstyled ">
+                            <form class="d-md-flex flex-row mb-3">
+                                <div class="input-group">
+                                    <input type="search" class="form-control rounded-start" placeholder="Search"
+                                        aria-label="Search" aria-describedby="search-addon" />
+                                    <button type="button" class="btn btn-danger w-25"><i
+                                            class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                            </form>
+                        </li>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row justify-content-evenly w-100">
+
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">HELP</a>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn text-light fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#Login">
+                                    LOG IN
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-danger rounded-4 fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#SignUp">
+                                    SIGN UP
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex text-center w-100">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-house"></i>
+                                HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i>
+                                MOVIES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-star"></i> NEWS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -605,12 +655,9 @@
         <div class="trailers-items bg-dark position-relative h-100 pb-4">
             <h1 class="text-light text-uppercase mb-3 ms-3">trailers</h1>
             <div id="carouselExampleCaptions" class="carousel slide w-100 h-100" data-bs-ride="false">
-
                 <div class="control-trailers flex-column my-auto h-100 h-25 h-lg-100">
                     <div class="d-flex align-items-center w-100 h-100 ">
-
                         <div class=" ms-3 w-100 h-100">
-
                             <div id="carouselExampleCaptions" class="carousel slide h-100 w-100 row"
                                 data-bs-ride="false">
                                 <div class="items-trailers col d-lg-flex d-none flex-lg-column align-items-center">
@@ -682,7 +729,7 @@
 
                     </div>
                 </div>
-                <div class="carousel-inner w-75 h-100 ms-4 mb-2">
+                <div class="carousel-inner w-75 h-100 ms-5 mb-2">
                     <div class="carousel-item h-100 active">
                         <div class="ratio ratio-16x9" style="border: 1px solid red">
                             <iframe src="https://www.youtube.com/embed/XRm1P7oGpMQ" title="YouTube video"
@@ -708,6 +755,14 @@
                         </div>
                     </div>
                 </div>
+                <button class="carousel-control-prev d-lg-none" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next d-lg-none" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
             </div>
         </div>
         <!-- End Trailers -->

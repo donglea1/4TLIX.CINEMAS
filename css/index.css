@@ -16,16 +16,7 @@ body{
     height: 875px;
 }
 
-.logo {
-    height: 65px;
-}
-
-.logo>img {
-    position: absolute;
-    width: 20%;
-}
-
-.logo>img:hover {
+.logo img:hover {
     z-index: 0;
     background: url("../IMG/newlogo.gif");
     background-position-x: center;
@@ -44,9 +35,7 @@ body{
     background-color: #dd003f;
 }
 
-#nav-bar {
-    margin-left: 22%;
-}
+
 
 .item {
     left: 24%;
@@ -56,17 +45,14 @@ body{
 
 .Title {
     font-family: 'Dosis', sans-serif;
-    font-size: 60px;
+    
     color: #ffffff;
-    font-weight: 700;
     text-transform: uppercase;
-    line-height: 60px;
 }
 
 .Title span {
     font-family: 'Dosis', sans-serif;
-    font-size: 36px;
-    font-weight: 300;
+    
     text-transform: uppercase;
 }
 
@@ -79,7 +65,7 @@ body{
 }
 
 .hex {
-    background: url(../IMG/BG/hexagon.svg) repeat;
+    background: url(../IMG/BG/Hexagon.svg) repeat;
     position: relative;
     top: 0;
     left: 0;
@@ -87,13 +73,6 @@ body{
     height: 100%;
     background-size: 425px;
     z-index: 1;
-}
-
-.hex .card {
-    max-width: 50%;
-    max-height: 390px;
-    top: 85px;
-    background-color: transparent;
 }
 
 .bg {

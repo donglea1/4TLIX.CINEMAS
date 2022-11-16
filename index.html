@@ -29,77 +29,100 @@
         <!-- place navbar here -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <div class="logo">
-                    <a class="navbar-brand logo" href="index.html">
-                        <img src="IMG/4tlix-logo.png" alt="" class="d-inline-block align-text-top" id="logo">
-                        <img src="IMG/4tlix-logo-bg.png" alt="" class="d-inline-block align-text-top" id="bg-logo">
-                    </a>
+                <div class="logo-mobile d-lg-none">
+                    <img src="IMG/4tlix-logo.png" style="width: 280px;" alt="">
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                    aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#demo" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-bar">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#"><i
-                                    class="fa-solid fa-house-chimney"></i> HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i> MOVIES</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-star"></i> NEW</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> CONTACT</a>
-                        </li>
-                    </ul>
-                    <div class="login">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <form class="d-md-flex flex-row mb-2">
-                                    <div class="input-group">
-                                        <input type="search" class="form-control rounded-start" placeholder="Search"
-                                            aria-label="Search" aria-describedby="search-addon" />
-                                        <button type="button" class="btn btn-danger w-25"><i
-                                                class="fa-solid fa-magnifying-glass"></i></button>
-                                    </div>
-                                </form>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">HELP</a>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn text-light fw-bold" data-bs-toggle="modal"
-                                    data-bs-target="#Login">
-                                    LOG IN
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-danger rounded-4 fw-bold" data-bs-toggle="modal"
-                                    data-bs-target="#SignUp">
-                                    SIGN UP
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="offcanvas offcanvas-end" style="position: absolute;" tabindex="-1" id="offcanvasRight"
-                    aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                        <h5 id="offcanvasRightLabel">Offcanvas right</h5>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        ...
-                    </div>
-                </div>
+                    <div class="row w-100 d-flex flex-row">
+                        <div class="col-2 logo">
+                            <a class="navbar-brand " href="index.html">
+                                <img src="IMG/4tlix-logo.png" alt=""
+                                    class="d-inline-block align-text-top position-absolute" id="logo"
+                                    style="width: 17%;">
+                                <img src="IMG/4tlix-logo-bg.png" alt=""
+                                    class="d-inline-block align-text-top position-absolute" id="bg-logo"
+                                    style="width: 17%;">
+                            </a>
+                        </div>
+                        <div class="col-9 ms-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i>
+                                                HOME</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i>
+                                                MOVIES</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-star"></i> NEW</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> CONTACT</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 d-flex flex-row-reverse">
+                                    <div class="login">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                            <li class="nav-item">
+                                                <form class="d-md-flex flex-row mb-2">
+                                                    <div class="input-group">
+                                                        <input type="search" class="form-control rounded-start"
+                                                            placeholder="Search" aria-label="Search"
+                                                            aria-describedby="search-addon" />
+                                                        <button type="button" class="btn btn-danger w-25"><i
+                                                                class="fa-solid fa-magnifying-glass"></i></button>
+                                                    </div>
+                                                </form>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="#">HELP</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <button type="button" class="btn text-light fw-bold"
+                                                    data-bs-toggle="modal" data-bs-target="#Login">
+                                                    LOG IN
+                                                </button>
+                                            </li>
+                                            <li class="nav-item">
+                                                <button type="button" class="btn btn-danger rounded-4 fw-bold"
+                                                    data-bs-toggle="modal" data-bs-target="#SignUp">
+                                                    SIGN UP
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
+
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Heading</h1>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Some text lorem ipsum.</p>
+            <p>Some text lorem ipsum.</p>
+            <button class="btn btn-secondary" type="button">A Button</button>
+        </div>
+    </div>
+
 
     <!-- Modal Sign In -->
     <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -192,27 +215,27 @@
     <main>
         <!-- Slide -->
         <div class="bg-slide">
-            <div class="hex">
-                <div id="carouselExampleControls" class="carousel slide d-flex justify-content-center "
+            <div class="hex h-100">
+                <div id="carouselExampleControls" class="carousel slide d-flex justify-content-center h-100"
                     data-bs-ride="carousel">
                     <div class="carousel-inner ">
-                        <div class="d-flex">
-                            <div class="carousel-item active item" style="height: 522px;">
-                                <div class="card mb-3 border border-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <div class="d-grid gap-2 d-md-block mb-1">
-                                                    <button class="btn btn-primary btn-sm  fw-bold">ACTION</button>
+                        <div class="d-flex h-100 align-items-lg-center">
+                            <div class="carousel-item active item">
+                                <div class="card mb-3 border border-0 bg-transparent w-75 h-100">
+                                    <div class="row d-lg-inline-flex d-flex flex-row g-0 w-100 h-100">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="card-body w-100">
+                                                <div class=" gap-2 d-md-block my-1 pe-4 pe-lg-0" style="width: 265px;">
+                                                    <button class="btn btn-primary btn-sm fw-bold">ACTION</button>
                                                     <button type="button"
                                                         class="btn btn-danger btn-sm fw-bold">SCI-FI</button>
                                                     <button type="button"
                                                         class="btn btn-secondary btn-sm fw-bold">ADVENTURE</button>
                                                 </div>
-                                                <h1 class="card-title Title">OBLIVION <span
-                                                        class="text-muted">2022</span>
+                                                <h1 class="card-title Title fs-1 fw-bold w-100">OBLIVION <span
+                                                        class="text-muted fw-normal "> 2022</span>
                                                 </h1>
-                                                <div class="d-grid gap-2 d-md-block mb-1">
+                                                <div class="d-none gap-2 d-md-block mb-1">
                                                     <a href="" class="btn me-2 text-danger">
                                                         <i
                                                             class="fa-solid fa-heart btn btn-outline-danger rounded-circle py-2"></i>
@@ -227,7 +250,7 @@
                                                             class="fa-solid fa-share-nodes btn btn-outline-danger rounded-circle py-2"></i>
                                                         Share</a>
                                                 </div>
-                                                <ul class="row text-light fw-bold">
+                                                <ul class="row text-light fw-bold d-lg-flex d-none">
                                                     <span class="my-4 fs-3"><i
                                                             class="fa-solid fa-star text-warning fs-3"></i> 7/10</span>
                                                     <li class="col ">Run Time: 2h21</li>
@@ -236,30 +259,31 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <img src="IMG/Poster/mv1.jpg" class="img-fluid rounded-start float-end me-2"
-                                                style="width: 250px;" alt="...">
+                                        <div class="col-lg-3 col-12">
+                                            <div class="row-cols-lg-1 row w-75 h-100">
+                                                <img src="IMG/Poster/mv1.jpg"
+                                                    class="img-fluid rounded-start w-100 h-100" alt="...">
+                                            </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-                            <div class="carousel-item item" style="height: 522px;">
-                                <div class="card mb-3 border border-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <div class="d-grid gap-2 d-md-block mb-1">
-                                                    <button class="btn btn-primary btn-sm  fw-bold">ACTION</button>
+                            <div class="carousel-item item">
+                                <div class="card mb-3 border border-0 bg-transparent w-75 h-100">
+                                    <div class="row d-lg-inline-flex d-flex flex-row g-0 w-100 h-100">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="card-body w-100">
+                                                <div class=" gap-2 d-md-block my-1 pe-4 pe-lg-0" style="width: 265px;">
+                                                    <button class="btn btn-primary btn-sm fw-bold">ACTION</button>
                                                     <button type="button"
                                                         class="btn btn-danger btn-sm fw-bold">SCI-FI</button>
                                                     <button type="button"
                                                         class="btn btn-secondary btn-sm fw-bold">ADVENTURE</button>
                                                 </div>
-                                                <h1 class="card-title Title">into the wild <span
-                                                        class="text-muted">2022</span>
+                                                <h1 class="card-title Title fs-1 fw-bold w-100">OBLIVION <span
+                                                        class="text-muted fw-normal "> 2022</span>
                                                 </h1>
-                                                <div class="d-grid gap-2 d-md-block mb-1">
+                                                <div class="d-none gap-2 d-md-block mb-1">
                                                     <a href="" class="btn me-2 text-danger">
                                                         <i
                                                             class="fa-solid fa-heart btn btn-outline-danger rounded-circle py-2"></i>
@@ -274,7 +298,7 @@
                                                             class="fa-solid fa-share-nodes btn btn-outline-danger rounded-circle py-2"></i>
                                                         Share</a>
                                                 </div>
-                                                <ul class="row text-light fw-bold">
+                                                <ul class="row text-light fw-bold d-lg-flex d-none">
                                                     <span class="my-4 fs-3"><i
                                                             class="fa-solid fa-star text-warning fs-3"></i> 7/10</span>
                                                     <li class="col ">Run Time: 2h21</li>
@@ -283,30 +307,31 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <img src="IMG/Poster/mv2.jpg" class="img-fluid rounded-start float-end me-2"
-                                                style="width: 250px;" alt="...">
+                                        <div class="col-lg-3 col-12">
+                                            <div class="row-cols-lg-1 row w-75 h-100">
+                                                <img src="IMG/Poster/mv2.jpg"
+                                                    class="img-fluid rounded-start w-100 h-100" alt="...">
+                                            </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-                            <div class="carousel-item item" style="height: 522px;">
-                                <div class="card mb-3 border border-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <div class="d-grid gap-2 d-md-block mb-1">
-                                                    <button class="btn btn-primary btn-sm  fw-bold">ACTION</button>
+                            <div class="carousel-item item">
+                                <div class="card mb-3 border border-0 bg-transparent w-75 h-100">
+                                    <div class="row d-lg-inline-flex d-flex flex-row g-0 w-100 h-100">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="card-body w-100">
+                                                <div class=" gap-2 d-md-block my-1 pe-4 pe-lg-0" style="width: 265px;">
+                                                    <button class="btn btn-primary btn-sm fw-bold">ACTION</button>
                                                     <button type="button"
                                                         class="btn btn-danger btn-sm fw-bold">SCI-FI</button>
                                                     <button type="button"
                                                         class="btn btn-secondary btn-sm fw-bold">ADVENTURE</button>
                                                 </div>
-                                                <h1 class="card-title Title">cyber punk <span
-                                                        class="text-muted">2022</span>
+                                                <h1 class="card-title Title fs-1 fw-bold w-100">OBLIVION <span
+                                                        class="text-muted fw-normal "> 2022</span>
                                                 </h1>
-                                                <div class="d-grid gap-2 d-md-block mb-1">
+                                                <div class="d-none gap-2 d-md-block mb-1">
                                                     <a href="" class="btn me-2 text-danger">
                                                         <i
                                                             class="fa-solid fa-heart btn btn-outline-danger rounded-circle py-2"></i>
@@ -321,7 +346,7 @@
                                                             class="fa-solid fa-share-nodes btn btn-outline-danger rounded-circle py-2"></i>
                                                         Share</a>
                                                 </div>
-                                                <ul class="row text-light fw-bold">
+                                                <ul class="row text-light fw-bold d-lg-flex d-none">
                                                     <span class="my-4 fs-3"><i
                                                             class="fa-solid fa-star text-warning fs-3"></i> 7/10</span>
                                                     <li class="col ">Run Time: 2h21</li>
@@ -330,11 +355,108 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <img src="IMG/Poster/mv3.jpg" class="img-fluid rounded-start float-end me-2"
-                                                style="width: 250px;" alt="...">
+                                        <div class="col-lg-3 col-12">
+                                            <div class="row-cols-lg-1 row w-75 h-100">
+                                                <img src="IMG/Poster/mv3.jpg"
+                                                    class="img-fluid rounded-start w-100 h-100" alt="...">
+                                            </div>
                                         </div>
-
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item item">
+                                <div class="card mb-3 border border-0 bg-transparent w-75 h-100">
+                                    <div class="row d-lg-inline-flex d-flex flex-row g-0 w-100 h-100">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="card-body w-100">
+                                                <div class=" gap-2 d-md-block my-1 pe-4 pe-lg-0" style="width: 265px;">
+                                                    <button class="btn btn-primary btn-sm fw-bold">ACTION</button>
+                                                    <button type="button"
+                                                        class="btn btn-danger btn-sm fw-bold">SCI-FI</button>
+                                                    <button type="button"
+                                                        class="btn btn-secondary btn-sm fw-bold">ADVENTURE</button>
+                                                </div>
+                                                <h1 class="card-title Title fs-1 fw-bold w-100">OBLIVION <span
+                                                        class="text-muted fw-normal "> 2022</span>
+                                                </h1>
+                                                <div class="d-none gap-2 d-md-block mb-1">
+                                                    <a href="" class="btn me-2 text-danger">
+                                                        <i
+                                                            class="fa-solid fa-heart btn btn-outline-danger rounded-circle py-2"></i>
+                                                        Add To Favorite</a>
+                                                    <a href="" class="btn me-2 text-danger" data-bs-toggle="modal"
+                                                        data-bs-target="#trailerMV">
+                                                        <i
+                                                            class="fa-solid fa-play btn btn-outline-danger rounded-circle py-2"></i>
+                                                        Watch Trailer</a>
+                                                    <a href="" class="btn me-2 text-danger">
+                                                        <i
+                                                            class="fa-solid fa-share-nodes btn btn-outline-danger rounded-circle py-2"></i>
+                                                        Share</a>
+                                                </div>
+                                                <ul class="row text-light fw-bold d-lg-flex d-none">
+                                                    <span class="my-4 fs-3"><i
+                                                            class="fa-solid fa-star text-warning fs-3"></i> 7/10</span>
+                                                    <li class="col ">Run Time: 2h21</li>
+                                                    <li class="col">Rated: PG-13</li>
+                                                    <li class="col">Release: 1 May 2015</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-12">
+                                            <div class="row-cols-lg-1 row w-75 h-100">
+                                                <img src="IMG/Poster/mv4.jpg"
+                                                    class="img-fluid rounded-start w-100 h-100" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item item">
+                                <div class="card mb-3 border border-0 bg-transparent w-75 h-100">
+                                    <div class="row d-lg-inline-flex d-flex flex-row g-0 w-100 h-100">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="card-body w-100">
+                                                <div class=" gap-2 d-md-block my-1 pe-4 pe-lg-0" style="width: 265px;">
+                                                    <button class="btn btn-primary btn-sm fw-bold">ACTION</button>
+                                                    <button type="button"
+                                                        class="btn btn-danger btn-sm fw-bold">SCI-FI</button>
+                                                    <button type="button"
+                                                        class="btn btn-secondary btn-sm fw-bold">ADVENTURE</button>
+                                                </div>
+                                                <h1 class="card-title Title fs-1 fw-bold w-100">OBLIVION <span
+                                                        class="text-muted fw-normal "> 2022</span>
+                                                </h1>
+                                                <div class="d-none gap-2 d-md-block mb-1">
+                                                    <a href="" class="btn me-2 text-danger">
+                                                        <i
+                                                            class="fa-solid fa-heart btn btn-outline-danger rounded-circle py-2"></i>
+                                                        Add To Favorite</a>
+                                                    <a href="" class="btn me-2 text-danger" data-bs-toggle="modal"
+                                                        data-bs-target="#trailerMV">
+                                                        <i
+                                                            class="fa-solid fa-play btn btn-outline-danger rounded-circle py-2"></i>
+                                                        Watch Trailer</a>
+                                                    <a href="" class="btn me-2 text-danger">
+                                                        <i
+                                                            class="fa-solid fa-share-nodes btn btn-outline-danger rounded-circle py-2"></i>
+                                                        Share</a>
+                                                </div>
+                                                <ul class="row text-light fw-bold d-lg-flex d-none">
+                                                    <span class="my-4 fs-3"><i
+                                                            class="fa-solid fa-star text-warning fs-3"></i> 7/10</span>
+                                                    <li class="col">Run Time: 2h21</li>
+                                                    <li class="col">Rated: PG-13</li>
+                                                    <li class="col">Release: 1 May 2015</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-12">
+                                            <div class="row-cols-lg-1 row w-75 h-100">
+                                                <img src="IMG/Poster/mv5.jpg"
+                                                    class="img-fluid rounded-start w-100 h-100" alt="...">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -480,18 +602,18 @@
         <!-- End Product -->
 
         <!-- Trailers -->
-        <div class="trailers-items bg-dark position-relative">
+        <div class="trailers-items bg-dark position-relative h-100 pb-4">
             <h1 class="text-light text-uppercase mb-3 ms-3">trailers</h1>
             <div id="carouselExampleCaptions" class="carousel slide w-100 h-100" data-bs-ride="false">
 
-                <div class="control-trailers flex-column my-auto h-100">
+                <div class="control-trailers flex-column my-auto h-100 h-25 h-lg-100">
                     <div class="d-flex align-items-center w-100 h-100 ">
 
                         <div class=" ms-3 w-100 h-100">
 
                             <div id="carouselExampleCaptions" class="carousel slide h-100 w-100 row"
                                 data-bs-ride="false">
-                                <div class="items-trailers col d-flex flex-column align-items-center">
+                                <div class="items-trailers col d-lg-flex d-none flex-lg-column align-items-center">
 
                                     <button class="w-25" type="button" data-bs-target="#carouselExampleCaptions"
                                         data-bs-slide="prev">
@@ -560,7 +682,7 @@
 
                     </div>
                 </div>
-                <div class="carousel-inner w-75 h-100 ms-4">
+                <div class="carousel-inner w-75 h-100 ms-4 mb-2">
                     <div class="carousel-item h-100 active">
                         <div class="ratio ratio-16x9" style="border: 1px solid red">
                             <iframe src="https://www.youtube.com/embed/XRm1P7oGpMQ" title="YouTube video"
@@ -591,7 +713,7 @@
         <!-- End Trailers -->
 
         <!-- Latest -->
-        <div class="latests position-relative w-100">
+        <div class="latests h-100 w-100">
             <div class="row mx-2">
                 <div class="col">
                     <div class="col d-flex justify-content-center align-content-center my-3">
@@ -687,16 +809,19 @@
         <!-- End Latest -->
 
         <!-- Footer -->
-        <div class="footer position-relative bg-dark w-100">
+        <div class="footer position-relative bg-dark w-100 h-100">
             <div class="row d-flex justify-content-center align-items-center g-2 mx-3">
-                <div class="col mt-4 mx-4">
-                    <img src="IMG/4tlix-logo.png" class="w-100 h-100 my-5" alt="logo">
-                    <h5>5th Avenue st, manhattan</h5>
-                    <h5>New York, NY 10001</h5>
-                    <br>
-                    <h5>Call us: <span class="text-light fs-5">(+01) 202 342 6789</span></h5>
+                <div class="col-12 col-lg mt-4 mx-4 text-lg-start text-center">
+                    <img src="IMG/4tlix-logo.png" class="w-100 h-100 pb-4" alt="logo">
+                    <ul class="list-unstyled">
+                        <li><a class="text-decoration-none" href="">5th Avenue st, manhattan</a></li>
+                        <li><a class="text-decoration-none" href="">New York, NY 10001</a></li>
+                        <br>
+                        <li><a class="text-decoration-none" href="">Call us: <span class="text-light fs-5">(+01) 202 342
+                                    6789</a></li>
+                    </ul>
                 </div>
-                <div class="col mt-4 mx-2 text-start">
+                <div class="col-12 col-lg mt-4 mx-2 text-lg-start text-center">
                     <h4 class="text-light">Resources</h4>
                     <ul class="list-unstyled">
                         <li><a class="text-decoration-none" href="">About</a></li>
@@ -707,7 +832,7 @@
                         <li><a class="text-decoration-none" href="">Help Center</a></li>
                     </ul>
                 </div>
-                <div class="col mt-4 mx-2 text-start">
+                <div class="col-12 col-lg mt-4 mx-2 text-lg-start text-center">
                     <h4 class="text-light">Legal</h4>
                     <ul class="list-unstyled">
                         <li><a class="text-decoration-none" href="">Terms of Use</a></li>
@@ -715,7 +840,7 @@
                         <li><a class="text-decoration-none" href="">Security</a></li>
                     </ul>
                 </div>
-                <div class="col mt-4 mx-2 text-start">
+                <div class="col-12 col-lg mt-4 mx-2 text-lg-start text-center">
                     <h4 class="text-light">Account</h4>
                     <ul class="list-unstyled">
                         <li><a class="text-decoration-none" href="">My Account</a></li>
@@ -724,7 +849,7 @@
                         <li><a class="text-decoration-none" href="">User Guide</a></li>
                     </ul>
                 </div>
-                <div class="col mt-4 mx-2 text-start">
+                <div class="col-12 col-lg mt-4 mx-2 text-lg-start text-center">
                     <h4 class="text-light">Newsletter</h4>
                     <ul class="list-unstyled">
                         <li><a class="text-decoration-none" href="">Subscribe to our newsletter system now

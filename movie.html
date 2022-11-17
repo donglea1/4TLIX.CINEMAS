@@ -30,44 +30,109 @@
         <!-- place navbar here -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <div class="logo">
-                    <a class="navbar-brand logo" href="index.html">
-                        <img src="IMG/4tlix-logo.png" alt="" class="d-inline-block align-text-top" id="logo">
-                        <img src="IMG/4tlix-logo-bg.png" alt="" class="d-inline-block align-text-top" id="bg-logo">
-                    </a>
+                <div class="logo-mobile d-lg-none">
+                    <a href="index.html">
+                        <img src="IMG/4tlix-logo.png" style="width: 280px;" alt=""></a>
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                    aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-bar">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#"><i
-                                    class="fa-solid fa-house-chimney"></i> HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i> MOVIES</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-star"></i> NEW</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> CONTACT</a>
-                        </li>
-                    </ul>
-                    <div class="login">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <form class="d-md-flex flex-row mb-2">
-                                    <div class="input-group">
-                                        <input type="search" class="form-control rounded-start" placeholder="Search"
-                                            aria-label="Search" aria-describedby="search-addon" />
-                                        <button type="button" class="btn btn-danger w-25"><i
-                                                class="fa-solid fa-magnifying-glass"></i></button>
+                    <div class="row w-100 d-flex flex-row">
+                        <div class="col-2 logo">
+                            <a class="navbar-brand " href="index.html">
+                                <img src="IMG/4tlix-logo.png" alt=""
+                                    class="d-inline-block align-text-top position-absolute" id="logo"
+                                    style="width: 17%;">
+                                <img src="IMG/4tlix-logo-bg.png" alt=""
+                                    class="d-inline-block align-text-top position-absolute" id="bg-logo"
+                                    style="width: 17%;">
+                            </a>
+                        </div>
+                        <div class="col-9 ms-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="navbar-nav me-auto ms-3 mb-2 mb-lg-0">
+
+                                        <li class="nav-item btn-nav b1">
+                                            <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i>
+                                                HOME</a>
+                                        </li>
+                                        <li class="nav-item btn-nav b1">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i>
+                                                MOVIES</a>
+                                        </li>
+                                        <li class="nav-item btn-nav b1">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-star"></i> NEW</a>
+                                        </li>
+                                        <li class="nav-item btn-nav b1">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> CONTACT</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 d-flex flex-row-reverse">
+                                    <div class="login">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                            <li class="nav-item">
+                                                <form class="d-md-flex flex-row mb-2">
+                                                    <div class="input-group">
+                                                        <input type="search" class="form-control rounded-start"
+                                                            placeholder="Search" aria-label="Search"
+                                                            aria-describedby="search-addon" />
+                                                        <button type="button" class="btn btn-danger w-25"><i
+                                                                class="fa-solid fa-magnifying-glass"></i></button>
+                                                    </div>
+                                                </form>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="#">HELP</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <button type="button" class="btn text-light fw-bold"
+                                                    data-bs-toggle="modal" data-bs-target="#Login">
+                                                    LOG IN
+                                                </button>
+                                            </li>
+                                            <li class="nav-item">
+                                                <button type="button" class="btn btn-danger rounded-4 fw-bold"
+                                                    data-bs-toggle="modal" data-bs-target="#SignUp">
+                                                    SIGN UP
+                                                </button>
+                                            </li>
+                                        </ul>
                                     </div>
-                                </form>
-                            </li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Menu</h1>
+            <button type="button" class="btn-close bg-light text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="row d-flex">
+                <div class="col-12 d-flex flex-row-reverse">
+                    <div class="login w-100">
+                        <li class="nav-item list-unstyled ">
+                            <form class="d-md-flex flex-row mb-3">
+                                <div class="input-group">
+                                    <input type="search" class="form-control rounded-start" placeholder="Search"
+                                        aria-label="Search" aria-describedby="search-addon" />
+                                    <button type="button" class="btn btn-danger w-25"><i
+                                            class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                            </form>
+                        </li>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row justify-content-evenly w-100">
+
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="#">HELP</a>
                             </li>
@@ -86,21 +151,28 @@
                         </ul>
                     </div>
                 </div>
-                <div class="offcanvas offcanvas-end" style="position: absolute;" tabindex="-1" id="offcanvasRight"
-                    aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                        <h5 id="offcanvasRightLabel">Offcanvas right</h5>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        ...
-                    </div>
+                <div class="col-12">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex text-center w-100">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-house"></i>
+                                HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i>
+                                MOVIES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-star"></i> NEWS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> CONTACT</a>
+                        </li>
+                    </ul>
                 </div>
 
             </div>
-        </nav>
-    </header>
+        </div>
+    </div>
 
     <!-- Modal Sign In -->
     <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -191,16 +263,16 @@
     </div>
 
     <main class="position-relative">
-        <!-- Profile -->
+        <!-- Profile Movie -->
         <div class="position-relative bg-movie opaci">
         </div>
-        <div class="movie position-relative d-flex justify-content-center">
-            <div class="row g-0 h-100">
-                <div class="col me-4" style="margin-top: -295px; z-index: 1;">
-                    <div class="card sticky-top" style="width: 22rem;">
+        <div class="position-relative justify-content-center">
+            <div class="row d-lg-flex flex-lg-row flex-column g-0 h-100">
+                <div class="col-12 col-lg-4 d-flex justify-content-center ms-lg-4" style="margin-top: -295px;">
+                    <div class="card sticky-top" style="width: 22rem; height: 41rem; z-index: 1;">
                         <img src="IMG/Poster/mv5.jpg" class="card-img-top" alt="...">
-                        <div class="card-body bg-black d-flex flex-column" style="height: 125px;">
-                            <div class="btn-transform position-relative h-100 mb-3">
+                        <div class="card-body bg-black d-flex flex-column">
+                            <div class="btn-transform position-relative w-100 mb-5 mb-lg-5">
                                 <div class="position-absolute rounded bg-danger d-flex justify-content-center align-items-center w-100 item-btn item-1"
                                     style="height: 40px;">
                                     <a class="text-uppercase my-1 text-decoration-none text-light text-center w-100"
@@ -218,7 +290,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="btn-transform position-relative h-100">
+                            <div class="btn-transform position-relative">
                                 <div class="position-absolute rounded bg-warning d-flex justify-content-center align-items-center w-100 item-btn item-1"
                                     style="height: 40px;">
                                     <a class="text-uppercase my-1 text-decoration-none text-black text-center w-100">
@@ -237,9 +309,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col ms-4" style="margin-top: -295px;">
+                <div class="col-12 col-lg-7 media-mb">
                     <div class="movie-single d-flex flex-column">
-                        <h1 class="text-light text-start fw-bold">IT <span class="fs-4 fw-normal">2022</span>
+                        <h1 class="fw-bold">IT <span class="fs-4 fw-normal">2022</span>
                         </h1>
                         <div class="social-btn float-start mt-2">
                             <a href="" class="btn me-2 text-danger">
@@ -249,14 +321,14 @@
                                 <i class="fa-solid fa-share-nodes btn btn-outline-danger rounded-circle py-2"></i>
                                 Share</a>
                         </div>
-                        <div class="movie-rate mt-3 mb-5">
+                        <div class="movie-rate mt-3 mb-5 d-none d-lg-grid">
                             <div class="row">
-                                <div class="col-2 rate d-flex align-items-center border border-start-0"
+                                <div class="col-2 rate d-none d-lg-flex align-items-lg-center border border-start-0"
                                     style="height: 50px;">
                                     <i class="fa-sharp fa-solid fa-star text-warning me-2"></i>
                                     <span class="text-light fs-4">8 <span class="fs-6 align-text-top">/10</span></span>
                                 </div>
-                                <div class="col-10 rate-star d-flex align-items-center border border-end-0"
+                                <div class="col-10 rate-star d-none d-lg-flex align-items-lg-center border border-end-0"
                                     style="height: 50px;">
                                     <span class="text-light fs-5">Rate This Movie:</span>
                                     <i class="fa-sharp fa-solid fa-star text-warning"></i>
@@ -275,15 +347,14 @@
                         <div class="movie-tabs" style="margin-top: 20px">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs border-0">
-                                <li class="nav-item">
-                                    <a class="nav-link text-light active" data-bs-toggle="tab"
-                                        href="#OVERVIEW">OVERVIEW</a>
+                                <li class="nav-item text-mb">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#OVERVIEW">OVERVIEW</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" data-bs-toggle="tab" href="#CAST">CAST & CREW</a>
+                                <li class="nav-item text-mb">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#CAST">CAST & CREW</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" data-bs-toggle="tab" href="#MEDIA">MEDIA</a>
+                                <li class="nav-item text-mb">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#MEDIA">MEDIA</a>
                                 </li>
                             </ul>
 
@@ -291,7 +362,7 @@
                             <div class="tab-content mt-3">
                                 <div class="tab-pane container active" id="OVERVIEW">
                                     <div class="row g-2 d-flex">
-                                        <div class="col-md-9">
+                                        <div class="col-lg-9">
                                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti quam
                                                 esse aut culpa cum quaerat fuga, neque vero eos doloremque dolorum hic
                                                 repellendus, eligendi ipsa in nisi, optio laudantium laborum.</p>
@@ -307,15 +378,14 @@
                                                     href=""><img src="IMG/Uploads/image2.jpg" alt=""></a>
                                                 <a class="me-4" data-bs-toggle="modal" data-bs-target="#img-item"
                                                     href=""><img src="IMG/Uploads/image3.jpg" alt=""></a>
-                                                <div class="vd-item ">
-                                                    <a class="position-relative" href="" data-bs-toggle="modal"
-                                                        data-bs-target="#vd-item">
-                                                        <i style="z-index: 1; left: 30px; top: 30px;"
-                                                            class="fa-regular fa-circle-play text-danger fs-1 position-absolute"></i>
-                                                        <img class="position-absolute" src="IMG/Uploads/image4.jpg"
-                                                            alt="">
-                                                    </a>
-                                                </div>
+
+                                                <a class="d-none d-lg-grid position-relative" href=""
+                                                    data-bs-toggle="modal" data-bs-target="#vd-item">
+                                                    <i style="z-index: 1; left: 30px; top: 30px;"
+                                                        class="fa-regular fa-circle-play text-danger fs-1 position-absolute"></i>
+                                                    <img class="position-absolute" src="IMG/Uploads/image4.jpg" alt="">
+                                                </a>
+
                                             </div>
                                             <div class="title d-flex align-items-center mt-4 border-bottom">
                                                 <h5 class="me-auto">CAST</h5>
@@ -327,7 +397,7 @@
                                                     <div class="row align-items-center g-2">
                                                         <div class="col-1"><img src="IMG/Uploads/cast1.jpg" alt="">
                                                         </div>
-                                                        <div class="col-5"><a class="ms-4" href="">Robert Downey Jr.</a>
+                                                        <div class="col-5"><a class="ms-4" href="">Robert Downey</a>
                                                         </div>
                                                         <div class="col-6 text-left">
                                                             <p class="mb-0">... Robert Downey Jr.</p>
@@ -371,8 +441,7 @@
                                                     <div class="row align-items-center g-2">
                                                         <div class="col-1"><img src="IMG/Uploads/cast5.jpg" alt="">
                                                         </div>
-                                                        <div class="col-5"><a class="ms-4" href="">Scarlett
-                                                                Johansson</a>
+                                                        <div class="col-5"><a class="ms-4" href="">Johansson</a>
                                                         </div>
                                                         <div class="col-6 text-left">
                                                             <p class="mb-0">... Natasha Romanoff/ Black Widow</p>
@@ -414,7 +483,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-lg-3">
                                             <div class="sb-it ms-5 mb-3">
                                                 <h6>Director:</h6>
                                                 <p><a href="">Joss Whedon</a></p>
@@ -484,16 +553,19 @@
         <!-- End Profile -->
 
         <!-- Footer -->
-        <div class="footer position-relative bg-dark w-100">
+        <div class="footer position-relative bg-dark w-100 h-100">
             <div class="row d-flex justify-content-center align-items-center g-2 mx-3">
-                <div class="col mt-4 mx-4">
-                    <img src="IMG/4tlix-logo.png" class="w-100 h-100 my-5" alt="logo">
-                    <h5>5th Avenue st, manhattan</h5>
-                    <h5>New York, NY 10001</h5>
-                    <br>
-                    <h5>Call us: <span class="text-light fs-5">(+01) 202 342 6789</span></h5>
+                <div class="col-12 col-lg mt-4 mx-4 text-lg-start text-center">
+                    <img src="IMG/4tlix-logo.png" class="w-100 h-100 pb-4" alt="logo">
+                    <ul class="list-unstyled">
+                        <li><a class="text-decoration-none" href="">5th Avenue st, manhattan</a></li>
+                        <li><a class="text-decoration-none" href="">New York, NY 10001</a></li>
+                        <br>
+                        <li><a class="text-decoration-none" href="">Call us: <span class="text-light fs-5">(+01) 202 342
+                                    6789</a></li>
+                    </ul>
                 </div>
-                <div class="col mt-4 mx-2 text-start">
+                <div class="col-12 col-lg mt-4 mx-2 text-lg-start text-center">
                     <h4 class="text-light">Resources</h4>
                     <ul class="list-unstyled">
                         <li><a class="text-decoration-none" href="">About</a></li>
@@ -504,7 +576,7 @@
                         <li><a class="text-decoration-none" href="">Help Center</a></li>
                     </ul>
                 </div>
-                <div class="col mt-4 mx-2 text-start">
+                <div class="col-12 col-lg mt-4 mx-2 text-lg-start text-center">
                     <h4 class="text-light">Legal</h4>
                     <ul class="list-unstyled">
                         <li><a class="text-decoration-none" href="">Terms of Use</a></li>
@@ -512,7 +584,7 @@
                         <li><a class="text-decoration-none" href="">Security</a></li>
                     </ul>
                 </div>
-                <div class="col mt-4 mx-2 text-start">
+                <div class="col-12 col-lg mt-4 mx-2 text-lg-start text-center">
                     <h4 class="text-light">Account</h4>
                     <ul class="list-unstyled">
                         <li><a class="text-decoration-none" href="">My Account</a></li>
@@ -521,7 +593,7 @@
                         <li><a class="text-decoration-none" href="">User Guide</a></li>
                     </ul>
                 </div>
-                <div class="col mt-4 mx-2 text-start">
+                <div class="col-12 col-lg mt-4 mx-2 text-lg-start text-center">
                     <h4 class="text-light">Newsletter</h4>
                     <ul class="list-unstyled">
                         <li><a class="text-decoration-none" href="">Subscribe to our newsletter system now

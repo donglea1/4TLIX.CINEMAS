@@ -108,7 +108,8 @@ p {
     width: 200px;
 }
 
-.movie-single h1,a{
+.movie-single h1,
+a {
     color: snow;
 }
 
@@ -116,7 +117,7 @@ p {
     margin-top: -295px;
 }
 
-.nav-link.active{
+.nav-link.active {
     color: snow !important;
 }
 
@@ -125,22 +126,52 @@ p {
         margin-top: 0;
     }
 
-    .movie-single h1{
+    .movie-single h1 {
         color: black !important;
         text-align: center;
     }
 
-    .movie-tabs ul li{
+    .movie-tabs ul li {
         margin-right: 0;
     }
 
-    .nav-link.active{
+    .nav-link.active {
         color: black !important;
     }
 
-    .text-mb>a{
+    .text-mb>a {
         color: black !important;
     }
 }
 
+.progress-step {
+    height: 95%;
+}
 
+.step-selected>.active {
+    background: url(../IMG/Uploads/selected.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    line-height: inherit;
+    color: snow !important;
+}
+
+.step-unselected {
+    background: url(../IMG/Uploads/unselect.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    line-height: inherit;
+    color: snow;
+}
+
+.progress-step {
+    font-family: 'Dosis', sans-serif;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.screen {
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+    height: 2rem;
+}

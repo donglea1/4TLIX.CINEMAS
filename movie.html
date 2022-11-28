@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myApp" ng-controller="shopping_cart">
 
 <head>
     <title>MOVIE</title>
@@ -23,6 +23,12 @@
 
     <!-- Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- AngularJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+        integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
@@ -67,7 +73,8 @@
                                             <a class="nav-link" href="#"><i class="fa-solid fa-star"></i> NEW</a>
                                         </li>
                                         <li class="nav-item btn-nav b1">
-                                            <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> CONTACT</a>
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i>
+                                                CONTACT</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -111,157 +118,6 @@
         </nav>
     </header>
 
-    <!-- Offcanvas Sidebar -->
-    <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
-        <div class="offcanvas-header">
-            <h1 class="offcanvas-title">Menu</h1>
-            <button type="button" class="btn-close bg-light text-reset" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="row d-flex">
-                <div class="col-12 d-flex flex-row-reverse">
-                    <div class="login w-100">
-                        <li class="nav-item list-unstyled ">
-                            <form class="d-md-flex flex-row mb-3">
-                                <div class="input-group">
-                                    <input type="search" class="form-control rounded-start" placeholder="Search"
-                                        aria-label="Search" aria-describedby="search-addon" />
-                                    <button type="button" class="btn btn-danger w-25"><i
-                                            class="fa-solid fa-magnifying-glass"></i></button>
-                                </div>
-                            </form>
-                        </li>
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row justify-content-evenly w-100">
-
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">HELP</a>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn text-light fw-bold" data-bs-toggle="modal"
-                                    data-bs-target="#Login">
-                                    LOG IN
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-danger rounded-4 fw-bold" data-bs-toggle="modal"
-                                    data-bs-target="#SignUp">
-                                    SIGN UP
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex text-center w-100">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-house"></i>
-                                HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i>
-                                MOVIES</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-star"></i> NEWS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> CONTACT</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Sign In -->
-    <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="width: 85%;">
-                <div class="modal-header border border-0 justify-content-center">
-                    <h1 class="modal-title fs-5 text-uppercase fw-bold" id="exampleModalLabel">Login</h1>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label text-dark">Username</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Username">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label text-dark">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1"
-                                placeholder="**********">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                            <label class="float-end mt-1" for=""><a href=""
-                                    class="text-dark text-decoration-none">Forget password ?</a></label>
-                        </div>
-                        <div class="mb-3 d-flex justify-content-center">
-                            <a class=" btn btn-danger text-light text-decoration-none w-100" href="user.html">Log In</a>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer d-block border border-0">
-                    <div class="mb-3">
-                        <p>Or via social</p>
-                    </div>
-                    <div class="row">
-                        <div class="col"> <button type="button" class="w-100 btn btn-primary fw-bold text-uppercase"><i
-                                    class="fa-brands fa-facebook-f"></i> Facebook</button>
-                        </div>
-                        <div class="col"> <button type="button"
-                                class="w-100 btn btn-info text-light fw-bold text-uppercase"><i
-                                    class="fa-brands fa-twitter"></i> twitter</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Sign Up -->
-    <div class="modal fade" id="SignUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border border-0 justify-content-center">
-                    <h1 class="modal-title fs-5 text-uppercase fw-bold" id="exampleModalLabel">Sign Up</h1>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label text-dark">Username</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label text-dark">Fullname</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label text-dark">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label text-dark">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label text-dark">RE-TYPE PASSWORD</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
-                        </div>
-                        <div class="mt-2 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-danger w-100 text-uppercase">Sign Up</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <main class="position-relative">
         <!-- Profile Movie -->
         <div class="position-relative bg-movie opaci">
@@ -269,8 +125,9 @@
         <div class="position-relative justify-content-center">
             <div class="row d-lg-flex flex-lg-row flex-column g-0 h-100">
                 <div class="col-12 col-lg-4 d-flex justify-content-center ms-lg-4" style="margin-top: -295px;">
-                    <div class="card sticky-top" style="width: 22rem; height: 41rem; z-index: 1;">
-                        <img src="IMG/Poster/mv5.jpg" class="card-img-top" alt="...">
+                    <div class="card sticky-top" style="width: 22rem; height: 40rem; z-index: 1;">
+                        <img src="https://cdn.eventcinemas.com.au/cdn/resources/movies/16206/images/largeposter.jpg"
+                            class="card-img-top" alt="...">
                         <div class="card-body bg-black d-flex flex-column">
                             <div class="btn-transform position-relative w-100 mb-5 mb-lg-5">
                                 <div class="position-absolute rounded bg-danger d-flex justify-content-center align-items-center w-100 item-btn item-1"
@@ -293,7 +150,8 @@
                             <div class="btn-transform position-relative">
                                 <div class="position-absolute rounded bg-warning d-flex justify-content-center align-items-center w-100 item-btn item-1"
                                     style="height: 40px;">
-                                    <a class="text-uppercase my-1 text-decoration-none text-black text-center w-100">
+                                    <a class="text-uppercase my-1 text-decoration-none text-black text-center w-100"
+                                        data-bs-toggle="modal" data-bs-target="#times_days">
                                         <i class="fa-solid fa-ticket me-3"></i>
                                         buy ticket
                                     </a>
@@ -301,7 +159,8 @@
 
                                 <div class="position-absolute rounded bg-warning d-flex justify-content-center align-items-center w-100 item-btn item-2"
                                     style="height: 40px;">
-                                    <a class="text-uppercase my-1 text-decoration-none text-black text-center w-100">
+                                    <a class="text-uppercase my-1 text-decoration-none text-black text-center w-100"
+                                        data-bs-toggle="modal" data-bs-target="#times_days">
                                         <i class="fa-solid fa-ticket me-3"></i>
                                     </a>
                                 </div>
@@ -311,7 +170,7 @@
                 </div>
                 <div class="col-12 col-lg-7 media-mb">
                     <div class="movie-single d-flex flex-column">
-                        <h1 class="fw-bold">IT <span class="fs-4 fw-normal">2022</span>
+                        <h1 class="fw-bold">WAKANDA FOREVER <span class="fs-4 fw-normal">2022</span>
                         </h1>
                         <div class="social-btn float-start mt-2">
                             <a href="" class="btn me-2 text-danger">
@@ -363,8 +222,10 @@
                                 <div class="tab-pane container active" id="OVERVIEW">
                                     <div class="row g-2 d-flex">
                                         <div class="col-lg-9">
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti quam
-                                                esse aut culpa cum quaerat fuga, neque vero eos doloremque dolorum hic
+                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
+                                                quam
+                                                esse aut culpa cum quaerat fuga, neque vero eos doloremque dolorum
+                                                hic
                                                 repellendus, eligendi ipsa in nisi, optio laudantium laborum.</p>
                                             <div class="title d-flex align-items-center mt-4 border-bottom">
                                                 <h5 class="me-auto">VIDEOS & PHOTOS</h5>
@@ -408,7 +269,8 @@
                                                     <div class="row align-items-center g-2">
                                                         <div class="col-1"><img src="IMG/Uploads/cast2.jpg" alt="">
                                                         </div>
-                                                        <div class="col-5"><a class="ms-4" href="">Chris Hemsworth</a>
+                                                        <div class="col-5"><a class="ms-4" href="">Chris
+                                                                Hemsworth</a>
                                                         </div>
                                                         <div class="col-6 text-left">
                                                             <p class="mb-0">... Thor</p>
@@ -561,7 +423,8 @@
                         <li><a class="text-decoration-none" href="">5th Avenue st, manhattan</a></li>
                         <li><a class="text-decoration-none" href="">New York, NY 10001</a></li>
                         <br>
-                        <li><a class="text-decoration-none" href="">Call us: <span class="text-light fs-5">(+01) 202 342
+                        <li><a class="text-decoration-none" href="">Call us: <span class="text-light fs-5">(+01) 202
+                                    342
                                     6789</a></li>
                     </ul>
                 </div>
@@ -614,6 +477,157 @@
         <!-- End Footer -->
     </main>
 
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Menu</h1>
+            <button type="button" class="btn-close bg-light text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="row d-flex">
+                <div class="col-12 d-flex flex-row-reverse">
+                    <div class="login w-100">
+                        <li class="nav-item list-unstyled ">
+                            <form class="d-md-flex flex-row mb-3">
+                                <div class="input-group">
+                                    <input type="search" class="form-control rounded-start" placeholder="Search"
+                                        aria-label="Search" aria-describedby="search-addon" />
+                                    <button type="button" class="btn btn-danger w-25"><i
+                                            class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                            </form>
+                        </li>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row justify-content-evenly w-100">
+
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">HELP</a>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn text-light fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#Login">
+                                    LOG IN
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-danger rounded-4 fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#SignUp">
+                                    SIGN UP
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex text-center w-100">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-house"></i>
+                                HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i>
+                                MOVIES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-star"></i> NEWS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sign In -->
+    <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="width: 85%;">
+                <div class="modal-header border border-0 justify-content-center">
+                    <h1 class="modal-title fs-5 text-uppercase fw-bold" id="exampleModalLabel">Login</h1>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Username</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="**********">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                            <label class="float-end mt-1" for=""><a href=""
+                                    class="text-dark text-decoration-none">Forget password ?</a></label>
+                        </div>
+                        <div class="mb-3 d-flex justify-content-center">
+                            <a class=" btn btn-danger text-light text-decoration-none w-100" href="user.html">Log
+                                In</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-block border border-0">
+                    <div class="mb-3">
+                        <p>Or via social</p>
+                    </div>
+                    <div class="row">
+                        <div class="col"> <button type="button" class="w-100 btn btn-primary fw-bold text-uppercase"><i
+                                    class="fa-brands fa-facebook-f"></i> Facebook</button>
+                        </div>
+                        <div class="col"> <button type="button"
+                                class="w-100 btn btn-info text-light fw-bold text-uppercase"><i
+                                    class="fa-brands fa-twitter"></i> twitter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sign Up -->
+    <div class="modal fade" id="SignUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border border-0 justify-content-center">
+                    <h1 class="modal-title fs-5 text-uppercase fw-bold" id="exampleModalLabel">Sign Up</h1>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Username</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">Fullname</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">RE-TYPE PASSWORD</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="mt-2 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-danger w-100 text-uppercase">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal Trailer -->
     <div class="modal fade" id="trailerMV" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -656,7 +670,7 @@
     </div>
 
     <!-- Modal img-item -->
-    <div class="modal fade" id="img-item" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="img-item" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header position-relative border-0">
@@ -692,7 +706,448 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+    <!-- Modal Buy Ticket -->
+    <div class="modal fade" id="times_days" aria-hidden="true" aria-labelledby="times_days" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-uppercase" id="exampleModalToggleLabel">performance</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="slide-times mb-2 border-bottom border-danger">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner d-grid justify-content-center ">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <ul class="nav nav-pills d-flex flex-row">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark text-decoration-none active d-flex flex-column"
+                                                    data-bs-toggle="pill" href="#menu1" aria-selected="true">
+                                                    <span>Mon.</span>
+                                                    <span>21/11</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark text-decoration-none d-flex flex-column"
+                                                    data-bs-toggle="pill" href="#menu2" aria-selected="true">
+                                                    <span>Tue.</span>
+                                                    <span>22/11</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark text-decoration-none d-flex flex-column"
+                                                    data-bs-toggle="pill" href="#menu3" aria-selected="true">
+                                                    <span>Wed.</span>
+                                                    <span>22/11</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark text-decoration-none d-flex flex-column"
+                                                    data-bs-toggle="pill" href="#menu4" aria-selected="true">
+                                                    <span>Thu.</span>
+                                                    <span>22/11</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <ul class="nav nav-pills d-flex flex-row">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark text-decoration-none active d-flex flex-column"
+                                                    data-bs-toggle="pill" href="#menu2" aria-selected="true">
+                                                    <span>Fri.</span>
+                                                    <span>21/11</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark text-decoration-none d-flex flex-column"
+                                                    data-bs-toggle="pill" href="#menu4" aria-selected="true">
+                                                    <span>Sat.</span>
+                                                    <span>22/11</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark text-decoration-none d-flex flex-column"
+                                                    data-bs-toggle="pill" href="#menu4" aria-selected="true">
+                                                    <span>Sun.</span>
+                                                    <span>22/11</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev text-dark" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-control-next text-dark" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane container active" id="menu1">
+                            <div class="row d-lg-flex flex-row">
+                                <div class="col-lg-3 d-lg-grid d-none">
+                                    <div>
+                                        <img src="https://www.cgv.vn/media/catalog/product/cache/1/thumbnail/185x260/8fed44cf50ba9642d30b9a74c2fa5e2d/b/p/bp2_official_poster_1_.jpg"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 overflow-auto" style="height: 20rem;">
+                                    <div ng-repeat="p in performance">
+                                        <div class="d-flex flex-column">
+                                            <span class="fw-bold">{{p.locate}}</span>
+                                            <ul class="row list-unstyled w-75">
+                                                <li class="col mt-lg-0 mt-2">
+                                                    <button class=" fs-6 btn btn-outline-danger"
+                                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                                        {{p.time1}}
+                                                    </button>
+                                                </li>
+                                                <li class="col mt-lg-0 mt-2">
+                                                    <button class=" fs-6 btn btn-outline-danger"
+                                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                                        {{p.time2}}
+                                                    </button>
+                                                </li>
+                                                <li class="col mt-lg-0 mt-2">
+                                                    <button class=" fs-6 btn btn-outline-danger"
+                                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                                        {{p.time3}}
+                                                    </button>
+                                                </li>
+                                                <li class="col mt-lg-0 mt-2">
+                                                    <button class=" fs-6 btn btn-outline-danger"
+                                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                                        {{p.time4}}
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane container fade" id="menu2">mv2</div>
+                        <div class="tab-pane container fade" id="menu3">mv3</div>
+                        <div class="tab-pane container fade" id="menu4">There is no schedule on this day</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <divs class="modal fade" id="exampleModalToggle2" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-uppercase" id="exampleModalToggleLabel2">Add information for
+                        your
+                        order</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="w-100 mb-3" style="height: 3rem;">
+                            <div id="nav-tab" role="tablist"
+                                class="row text-center d-flex flex-row justify-content-center align-items-center step-selected g-2 w-100 h-100">
+                                <button id="btn-step-1" data-bs-toggle="tab" data-bs-target="#step-1" type="button"
+                                    role="tab"
+                                    class="nav-link active col progress-step step-unselected d-grid align-items-center border-0">1.
+                                    Select tickets</button>
+                                <button id="btn-step-2" data-bs-toggle="tab" data-bs-target="#step-2" type="button"
+                                    role="tab"
+                                    class="nav-link col progress-step step-unselected d-grid align-items-center border-0">2.
+                                    Select seats</button>
+                                <button id="btn-step-3" data-bs-toggle="tab" data-bs-target="#step-3" type="button"
+                                    role="tab"
+                                    class="nav-link  col progress-step step-unselected d-grid align-items-center border-0">3.
+                                    Select foods</button>
+                                <button id="btn-step-4" data-bs-toggle="tab" data-bs-target="#step-4" type="button"
+                                    role="tab"
+                                    class="nav-link col progress-step step-unselected d-grid align-items-center border-0">4.
+                                    Verify order</button>
+                                <button id="btn-step-5" data-bs-toggle="tab" data-bs-target="#step-5" type="button"
+                                    role="tab"
+                                    class="nav-link col progress-step step-unselected d-grid align-items-center border-0">5.
+                                    Pay order</button>
+                            </div>
+                        </div>
+                        <div class="infor-order w-100">
+                            <div class="row h-100">
+                                <div class="col-lg-8">
+                                    <div class="tab-content" id="nav-tabContent">
+                                        <div class="tab-pane fade show active" id="step-1" role="tabpanel"
+                                            aria-labelledby="btn-step-1" tabindex="0">
+                                            <div class="row d-lg-flex flex-row justify-content-center">
+                                                <div class="col-lg-3 col-7 me-lg-5">
+                                                    <img class="h-100"
+                                                        src="https://www.cgv.vn/media/catalog/product/cache/1/thumbnail/185x260/8fed44cf50ba9642d30b9a74c2fa5e2d/b/p/bp2_official_poster_1_.jpg"
+                                                        alt="">
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="text-uppercase text-lg-start text-center">Wakanda
+                                                        forever
+                                                    </h4>
+                                                    <div class="fs-5">Showing on Wed 23 Nov 10:00</div>
+                                                    <div class="fs-5">4TLIX Le Van Viet</div>
+                                                    <div class="ticket">
+                                                        <table class="table table-borderless">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">TICKET</th>
+                                                                    <th scope="col">PRICE</th>
+                                                                    <th scope="col"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr ng-repeat="t in tickets">
+                                                                    <th scope="row">{{t.type}}</th>
+                                                                    <td>{{t.price | currency}}</td>
+                                                                    <td><button type="button" class="btn btn-success w-100 fw-bold" ng-click="addItem(t)">+1</button></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="step-2" role="tabpanel"
+                                            aria-labelledby="btn-step-2" tabindex="0">
+                                            <div class="row d-flex flex-row">
+                                                <div class="col-lg-1 d-lg-flex d-none">
+                                                    <table class="table table-borderless text-center fw-bold"
+                                                        style="margin-top: 3.7rem; height: 86%;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>A</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>B</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>C</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>D</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>E</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>F</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>G</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>H</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>I</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div
+                                                    class="col-lg-10 col-12 overflow-auto bg-success border border-primary">
+                                                    <table class="table table-borderless">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="11">
+                                                                    <div class="screen bg-light my-1 text-center">
+                                                                        SCREEN
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="s in seats">
+                                                                <td value={{s.btn_value1}}><button
+                                                                        value="{{s.btn_value1}}"><i
+                                                                            class="fa-solid fa-couch"></i></button>
+                                                                </td>
+                                                                <td value={{s.btn_value2}}><button
+                                                                        value="{{s.btn_value2}}"><i
+                                                                            class="fa-solid fa-couch"></i></button>
+                                                                </td>
+                                                                <td value={{s.btn_value3}}><button
+                                                                        value="{{s.btn_value3}}"><i
+                                                                            class="fa-solid fa-couch"></i></button>
+                                                                </td>
+                                                                <td value={{s.btn_value4}}><button
+                                                                        value="{{s.btn_value4}}"><i
+                                                                            class="fa-solid fa-couch"></i></button>
+                                                                </td>
+                                                                <td value={{s.btn_value5}}><button
+                                                                        value="{{s.btn_value5}}"><i
+                                                                            class="fa-solid fa-couch"></i></button>
+                                                                </td>
+                                                                <td value={{s.btn_value6}}><button
+                                                                        value="{{s.btn_value6}}"><i
+                                                                            class="fa-solid fa-couch"></i></button>
+                                                                </td>
+                                                                <td value={{s.btn_value7}}><button
+                                                                        value="{{s.btn_value7}}"><i
+                                                                            class="fa-solid fa-couch"></i></button>
+                                                                </td>
+                                                                <td value={{s.btn_value8}}><button
+                                                                        value="{{s.btn_value8}}"><i
+                                                                            class="fa-solid fa-couch"></i></button>
+                                                                </td>
+                                                                <td value={{s.btn_value9}}><button
+                                                                        value="{{s.btn_value9}}"><i
+                                                                            class="fa-solid fa-couch"></i></button>
+                                                                </td>
+                                                                <td value={{s.btn_value10}}><button
+                                                                        value="{{s.btn_value10}}"><i
+                                                                            class="fa-solid fa-couch"></i></button>
+                                                                </td>
+                                                                <td value={{s.btn_value11}}><button
+                                                                        value="{{s.btn_value11}}"><i
+                                                                            class="fa-solid fa-couch"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-1 d-lg-flex d-none">
+                                                    <table class="table table-borderless text-center fw-bold"
+                                                        style="margin-top: 3.7rem; height: 86%;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>A</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>B</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>C</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>D</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>E</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>F</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>G</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>H</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>I</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="position-absolute" style="left: 50rem; bottom: 2rem;">
+                                                    <div class="row d-lg-flex flex-column ">
+                                                        <div class="col-lg-3 mb-lg-3 d-flex flex-row">
+                                                            <span
+                                                                class="border border-dark border-2 me-1 bg-danger d-grid justify-content-center align-items-center"
+                                                                style="width: 2.3em; height: 2em;">
+                                                                <i class="fa-solid fa-couch"></i>
+                                                            </span>
+                                                            <span class="text-uppercase fw-bold">Selected
+                                                                seat</span>
+                                                        </div>
+                                                        <div class="col-lg-3 mb-lg-3 d-flex flex-row">
+                                                            <button
+                                                                class="border border-dark border-2 d-grid justify-content-center align-items-center me-1"
+                                                                style="width: 2.3em; height: 2em;">
+                                                                <i class="fa-solid fa-couch"></i>
+                                                            </button>
+                                                            <span class="text-uppercase fw-bold">seat
+                                                                available</span>
+                                                        </div>
+                                                        <div class="col-lg-3 mb-lg-3 d-flex flex-row">
+                                                            <button
+                                                                class="border border-dark border-2 d-grid justify-content-center align-items-center me-1 bg-secondary text-light"
+                                                                style="width: 2.3em; height: 2em;">
+                                                                <i class="fa-solid fa-couch"></i>
+                                                            </button>
+                                                            <span class="text-uppercase fw-bold">seat sold</span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="step-3" role="tabpanel"
+                                            aria-labelledby="btn-step-3" tabindex="0">3</div>
+                                        <div class="tab-pane fade" id="step-4" role="tabpanel"
+                                            aria-labelledby="btn-step-4" tabindex="0">4</div>
+                                        <div class="tab-pane fade" id="step-5" role="tabpanel"
+                                            aria-labelledby="btn-step-5" tabindex="0">5</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 bg-danger overflow-auto" style="height: 18rem;">
+                                    <table class="table table-borderless text-light">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" colspan="4"><i class="fa-solid fa-hashtag"></i>
+                                                    Your Order</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="item in carts" ng-init="setTotals(item)" class="align-items-center">
+                                                <td>{{item.type}}</td>
+                                                <td><input class="bg-transparent text-light border-light" style="width: 3rem;" type="number" min="0" max="10" 
+                                                    ng-change="updatePrice()" ng-model="item.qty"></td>
+                                                <td style="width: 4rem;">{{item.price * item.qty | currency}}</td>
+                                                <td style="width: 2rem;">
+                                                    <button type="button" class="btn" ng-click="removeItem(item)">
+                                                        <i class="fa-solid fa-xmark"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr class="border-top">
+                                                <td colspan="2" class="fw-bold fs-4">Total</td>
+                                                <td>{{totalPrice | currency}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="row w-100">
+                        <div class="col col-lg-2">
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#times_days">
+                                Back to first
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary btnPrev">
+                                Back step
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary btnNext ms-lg-5">
+                                Next step
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </divs>
 
     <!-- Bootstrap JavaScript Libraries -->
 
@@ -704,6 +1159,21 @@
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        $('.btnNext').click(function () {
+            $('#nav-tab > .active').next('button').trigger('click');
+        });
+
+        $('.btnPrev').click(function () {
+            $('#nav-tab > .active').prev('button').trigger('click');
+        });
+    </script>
+
+    <script src="AngularJS/ngApp.js"></script>
+    <script src="AngularJS/Products.js"></script>
 
 </body>
 

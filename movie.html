@@ -835,16 +835,100 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane container fade" id="menu2">mv2</div>
-                        <div class="tab-pane container fade" id="menu3">mv3</div>
+                        <div class="tab-pane container fade" id="menu2">
+                            <div class="row d-lg-flex flex-row">
+                                <div class="col-lg-3 d-lg-grid d-none">
+                                    <div>
+                                        <img src="https://www.cgv.vn/media/catalog/product/cache/1/thumbnail/185x260/8fed44cf50ba9642d30b9a74c2fa5e2d/b/p/bp2_official_poster_1_.jpg"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 overflow-auto" style="height: 20rem;">
+                                    <div ng-repeat="p in performance">
+                                        <div class="d-flex flex-column">
+                                            <span class="fw-bold">{{p.locate}}</span>
+                                            <ul class="row list-unstyled w-75">
+                                                <li class="col mt-lg-0 mt-2">
+                                                    <button class=" fs-6 btn btn-outline-danger"
+                                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                                        {{p.time1}}
+                                                    </button>
+                                                </li>
+                                                <li class="col mt-lg-0 mt-2">
+                                                    <button class=" fs-6 btn btn-outline-danger"
+                                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                                        {{p.time2}}
+                                                    </button>
+                                                </li>
+                                                <li class="col mt-lg-0 mt-2">
+                                                    <button class=" fs-6 btn btn-outline-danger"
+                                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                                        {{p.time3}}
+                                                    </button>
+                                                </li>
+                                                <li class="col mt-lg-0 mt-2">
+                                                    <button class=" fs-6 btn btn-outline-danger"
+                                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                                        {{p.time4}}
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane container fade" id="menu3">
+                            <div class="row d-lg-flex flex-row">
+                                <div class="col-lg-3 d-lg-grid d-none">
+                                    <div>
+                                        <img src="https://www.cgv.vn/media/catalog/product/cache/1/thumbnail/185x260/8fed44cf50ba9642d30b9a74c2fa5e2d/b/p/bp2_official_poster_1_.jpg"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 overflow-auto" style="height: 20rem;">
+                                    <div ng-repeat="p in performance">
+                                        <div class="d-flex flex-column">
+                                            <span class="fw-bold">{{p.locate}}</span>
+                                            <ul class="row list-unstyled w-75">
+                                                <li class="col mt-lg-0 mt-2">
+                                                    <button class=" fs-6 btn btn-outline-danger"
+                                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                                        {{p.time1}}
+                                                    </button>
+                                                </li>
+                                                <li class="col mt-lg-0 mt-2">
+                                                    <button class=" fs-6 btn btn-outline-danger"
+                                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                                        {{p.time2}}
+                                                    </button>
+                                                </li>
+                                                <li class="col mt-lg-0 mt-2">
+                                                    <button class=" fs-6 btn btn-outline-danger"
+                                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                                        {{p.time3}}
+                                                    </button>
+                                                </li>
+                                                <li class="col mt-lg-0 mt-2">
+                                                    <button class=" fs-6 btn btn-outline-danger"
+                                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                                        {{p.time4}}
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="tab-pane container fade" id="menu4">There is no schedule on this day</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <divs class="modal fade" id="exampleModalToggle2" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="exampleModalToggleLabel2"
-        tabindex="-1">
+    <divs class="modal fade" id="exampleModalToggle2" aria-hidden="true" data-bs-backdrop="static"
+        aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
@@ -882,7 +966,7 @@
                         </div>
                         <div class="infor-order w-100">
                             <div class="row h-100">
-                                <div class="col-lg-8">
+                                <div class="col-lg-8 mx-0">
                                     <div class="tab-content" id="nav-tabContent">
                                         <div class="tab-pane fade show active" id="step-1" role="tabpanel"
                                             aria-labelledby="btn-step-1" tabindex="0">
@@ -911,7 +995,9 @@
                                                                 <tr ng-repeat="t in tickets">
                                                                     <th scope="row">{{t.type}}</th>
                                                                     <td>{{t.price | currency}}</td>
-                                                                    <td><button type="button" class="btn btn-success w-100 fw-bold" ng-click="addItem(t)">+1</button></td>
+                                                                    <td><button type="button"
+                                                                            class="btn btn-success w-100 fw-bold"
+                                                                            ng-click="addItem(t)">+1</button></td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -924,7 +1010,7 @@
                                             <div class="row d-flex flex-row">
                                                 <div class="col-lg-1 d-lg-flex d-none">
                                                     <table class="table table-borderless text-center fw-bold"
-                                                        style="margin-top: 3.7rem; height: 86%;">
+                                                        style="margin-top: 3.8rem; height: 82%;">
                                                         <tbody>
                                                             <tr>
                                                                 <td>A</td>
@@ -956,13 +1042,13 @@
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                                <div
-                                                    class="col-lg-10 col-12 overflow-auto bg-success border border-primary">
+                                                <div class="col-lg-11 col-12 overflow-auto bg-transparent">
                                                     <table class="table table-borderless">
                                                         <thead>
                                                             <tr>
                                                                 <th colspan="11">
-                                                                    <div class="screen bg-light my-1 text-center">
+                                                                    <div id="screen"
+                                                                        class="bg-dark text-light my-1 text-center align-content-center">
                                                                         SCREEN
                                                                     </div>
                                                                 </th>
@@ -970,116 +1056,176 @@
                                                         </thead>
                                                         <tbody>
                                                             <tr ng-repeat="s in seats">
-                                                                <td value={{s.btn_value1}}><button
-                                                                        value="{{s.btn_value1}}"><i
-                                                                            class="fa-solid fa-couch"></i></button>
+                                                                <td>
+                                                                    <input type="checkbox" class="btn-check"
+                                                                        id="{{s.seat_id1}}" 
+                                                                        ng-disabled="!selected.includes(s.seat_id1) && selected.length === limitSeat"
+                                                                        ng-checked="exists(s.seat_id1, selected)"
+                                                                        ng-click="toggle(s.seat_id1, selected)"
+                                                                        autocomplete="off">
+                                                                    <label class="btn btn-outline-danger seat"
+                                                                        for="{{s.seat_id1}}">
+                                                                        <i class="fa-solid fa-couch"></i>
+                                                                    </label>
                                                                 </td>
-                                                                <td value={{s.btn_value2}}><button
-                                                                        value="{{s.btn_value2}}"><i
-                                                                            class="fa-solid fa-couch"></i></button>
+                                                                <td>
+                                                                    <input type="checkbox" class="btn-check"
+                                                                        id="{{s.seat_id2}}"
+                                                                        ng-disabled="!selected.includes(s.seat_id2) && selected.length === limitSeat"
+                                                                        ng-checked="exists(s.seat_id2, selected)"
+                                                                        ng-click="toggle(s.seat_id2, selected)"
+                                                                        autocomplete="off">
+                                                                    <label class="btn btn-outline-danger seat"
+                                                                        for="{{s.seat_id2}}">
+                                                                        <i class="fa-solid fa-couch"></i>
+                                                                    </label>
                                                                 </td>
-                                                                <td value={{s.btn_value3}}><button
-                                                                        value="{{s.btn_value3}}"><i
-                                                                            class="fa-solid fa-couch"></i></button>
+                                                                <td>
+                                                                    <input type="checkbox" class="btn-check"
+                                                                        id="{{s.seat_id3}}"
+                                                                        ng-disabled="!selected.includes(s.seat_id3) && selected.length === limitSeat"
+                                                                        ng-checked="exists(s.seat_id3, selected)"
+                                                                        ng-click="toggle(s.seat_id3, selected)"
+                                                                        autocomplete="off">
+                                                                    <label class="btn btn-outline-danger seat"
+                                                                        for="{{s.seat_id3}}">
+                                                                        <i class="fa-solid fa-couch"></i>
+                                                                    </label>
                                                                 </td>
-                                                                <td value={{s.btn_value4}}><button
-                                                                        value="{{s.btn_value4}}"><i
-                                                                            class="fa-solid fa-couch"></i></button>
+                                                                <td>
+                                                                    <input type="checkbox" class="btn-check"
+                                                                        id="{{s.seat_id4}}"
+                                                                        ng-disabled="!selected.includes(s.seat_id4) && selected.length === limitSeat"
+                                                                        ng-checked="exists(s.seat_id4, selected)"
+                                                                        ng-click="toggle(s.seat_id4, selected)"
+                                                                        autocomplete="off">
+                                                                    <label class="btn btn-outline-danger seat"
+                                                                        for="{{s.seat_id4}}">
+                                                                        <i class="fa-solid fa-couch"></i>
+                                                                    </label>
                                                                 </td>
-                                                                <td value={{s.btn_value5}}><button
-                                                                        value="{{s.btn_value5}}"><i
-                                                                            class="fa-solid fa-couch"></i></button>
+                                                                <td>
+                                                                    <input type="checkbox" class="btn-check"
+                                                                        id="{{s.seat_id5}}"
+                                                                        ng-disabled="!selected.includes(s.seat_id5) && selected.length === limitSeat"
+                                                                        ng-checked="exists(s.seat_id5, selected)"
+                                                                        ng-click="toggle(s.seat_id5, selected)"
+                                                                        autocomplete="off">
+                                                                    <label class="btn btn-outline-danger seat"
+                                                                        for="{{s.seat_id5}}">
+                                                                        <i class="fa-solid fa-couch"></i>
+                                                                    </label>
                                                                 </td>
-                                                                <td value={{s.btn_value6}}><button
-                                                                        value="{{s.btn_value6}}"><i
-                                                                            class="fa-solid fa-couch"></i></button>
+                                                                <td>
+                                                                    <input type="checkbox" class="btn-check"
+                                                                        id="{{s.seat_id6}}"
+                                                                        ng-disabled="!selected.includes(s.seat_id6) && selected.length === limitSeat"
+                                                                        ng-checked="exists(s.seat_id6, selected)"
+                                                                        ng-click="toggle(s.seat_id6, selected)"
+                                                                        autocomplete="off">
+                                                                    <label class="btn btn-outline-danger seat"
+                                                                        for="{{s.seat_id6}}">
+                                                                        <i class="fa-solid fa-couch"></i>
+                                                                    </label>
                                                                 </td>
-                                                                <td value={{s.btn_value7}}><button
-                                                                        value="{{s.btn_value7}}"><i
-                                                                            class="fa-solid fa-couch"></i></button>
+                                                                <td>
+                                                                    <input type="checkbox" class="btn-check"
+                                                                        id="{{s.seat_id7}}"
+                                                                        ng-disabled="!selected.includes(s.seat_id7) && selected.length === limitSeat"
+                                                                        ng-checked="exists(s.seat_id7, selected)"
+                                                                        ng-click="toggle(s.seat_id7, selected)"
+                                                                        autocomplete="off">
+                                                                    <label class="btn btn-outline-danger seat"
+                                                                        for="{{s.seat_id7}}">
+                                                                        <i class="fa-solid fa-couch"></i>
+                                                                    </label>
                                                                 </td>
-                                                                <td value={{s.btn_value8}}><button
-                                                                        value="{{s.btn_value8}}"><i
-                                                                            class="fa-solid fa-couch"></i></button>
+                                                                <td>
+                                                                    <input type="checkbox" class="btn-check"
+                                                                        id="{{s.seat_id8}}"
+                                                                        ng-disabled="!selected.includes(s.seat_id8) && selected.length === limitSeat"
+                                                                        ng-checked="exists(s.seat_id8, selected)"
+                                                                        ng-click="toggle(s.seat_id8, selected)"
+                                                                        autocomplete="off">
+                                                                    <label class="btn btn-outline-danger seat"
+                                                                        for="{{s.seat_id8}}">
+                                                                        <i class="fa-solid fa-couch"></i>
+                                                                    </label>
                                                                 </td>
-                                                                <td value={{s.btn_value9}}><button
-                                                                        value="{{s.btn_value9}}"><i
-                                                                            class="fa-solid fa-couch"></i></button>
+                                                                <td>
+                                                                    <input type="checkbox" class="btn-check"
+                                                                        id="{{s.seat_id9}}"
+                                                                        ng-disabled="!selected.includes(s.seat_id9) && selected.length === limitSeat"
+                                                                        ng-checked="exists(s.seat_id9, selected)"
+                                                                        ng-click="toggle(s.seat_id9, selected)"
+                                                                        autocomplete="off">
+                                                                    <label class="btn btn-outline-danger seat"
+                                                                        for="{{s.seat_id9}}">
+                                                                        <i class="fa-solid fa-couch"></i>
+                                                                    </label>
                                                                 </td>
-                                                                <td value={{s.btn_value10}}><button
-                                                                        value="{{s.btn_value10}}"><i
-                                                                            class="fa-solid fa-couch"></i></button>
-                                                                </td>
-                                                                <td value={{s.btn_value11}}><button
-                                                                        value="{{s.btn_value11}}"><i
-                                                                            class="fa-solid fa-couch"></i></button>
+                                                                <td>
+                                                                    <input type="checkbox" class="btn-check"
+                                                                        id="{{s.seat_id10}}"
+                                                                        ng-disabled="!selected.includes(s.seat_id10) && selected.length === limitSeat"
+                                                                        ng-checked="exists(s.seat_id10, selected)"
+                                                                        ng-click="toggle(s.seat_id10, selected)"
+                                                                        autocomplete="off">
+                                                                    <label class="btn btn-outline-danger seat"
+                                                                        for="{{s.seat_id10}}">
+                                                                        <i class="fa-solid fa-couch"></i>
+                                                                    </label>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
+                                                        <tfoot>
+                                                            <tr class="text-center fw-bold">
+                                                                <td>1</td>
+                                                                <td>2</td>
+                                                                <td>3</td>
+                                                                <td>4</td>
+                                                                <td>5</td>
+                                                                <td>6</td>
+                                                                <td>7</td>
+                                                                <td>8</td>
+                                                                <td>9</td>
+                                                                <td>10</td>
+                                                            </tr>
+                                                        </tfoot>
                                                     </table>
                                                 </div>
-                                                <div class="col-lg-1 d-lg-flex d-none">
-                                                    <table class="table table-borderless text-center fw-bold"
-                                                        style="margin-top: 3.7rem; height: 86%;">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>A</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>B</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>C</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>D</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>E</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>F</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>G</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>H</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>I</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                <div class="position-absolute" style="left: 50rem; bottom: 2rem;">
+                                                <div class="position-absolute" style="left: 50rem; bottom: 5rem;">
                                                     <div class="row d-lg-flex flex-column ">
-                                                        <div class="col-lg-3 mb-lg-3 d-flex flex-row">
+                                                        <div
+                                                            class="col-lg-3 mb-lg-3 d-flex flex-row align-items-center">
                                                             <span
-                                                                class="border border-dark border-2 me-1 bg-danger d-grid justify-content-center align-items-center"
-                                                                style="width: 2.3em; height: 2em;">
+                                                                class="border border-danger text-danger border-2 me-1 bg-transparent d-grid justify-content-center align-items-center"
+                                                                style="width: 3.3em; height: 3em;">
                                                                 <i class="fa-solid fa-couch"></i>
                                                             </span>
-                                                            <span class="text-uppercase fw-bold">Selected
-                                                                seat</span>
+                                                            <span class="text-uppercase fw-bold ms-lg-1">Available
+                                                            </span>
                                                         </div>
-                                                        <div class="col-lg-3 mb-lg-3 d-flex flex-row">
-                                                            <button
-                                                                class="border border-dark border-2 d-grid justify-content-center align-items-center me-1"
-                                                                style="width: 2.3em; height: 2em;">
+                                                        <div
+                                                            class="col-lg-3 mb-lg-3 d-flex flex-row align-items-center">
+                                                            <span
+                                                                class="border border-danger border-2 text-light bg-danger d-grid justify-content-center align-items-center me-1"
+                                                                style="width: 3.3em; height: 3em;">
                                                                 <i class="fa-solid fa-couch"></i>
-                                                            </button>
-                                                            <span class="text-uppercase fw-bold">seat
-                                                                available</span>
+                                                            </span>
+                                                            <span class="text-uppercase fw-bold ms-lg-1">Selected</span>
                                                         </div>
-                                                        <div class="col-lg-3 mb-lg-3 d-flex flex-row">
-                                                            <button
-                                                                class="border border-dark border-2 d-grid justify-content-center align-items-center me-1 bg-secondary text-light"
-                                                                style="width: 2.3em; height: 2em;">
+                                                        <div
+                                                            class="col-lg-3 mb-lg-3 d-flex flex-row align-items-center">
+                                                            <span
+                                                                class="border border-dark border-2 text-light d-grid justify-content-center align-items-center me-1 bg-secondary text-light"
+                                                                style="width: 3.3em; height: 3em;">
                                                                 <i class="fa-solid fa-couch"></i>
-                                                            </button>
-                                                            <span class="text-uppercase fw-bold">seat sold</span>
+                                                            </span>
+                                                            <span class="text-uppercase fw-bold ms-lg-1">Occupied</span>
                                                         </div>
+                                                        <br>
+                                                        <p>{{selected | json}}</p>
 
                                                     </div>
                                                 </div>
@@ -1102,10 +1248,12 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr ng-repeat="item in carts" ng-init="setTotals(item)" class="align-items-center">
+                                            <tr ng-repeat="item in carts" ng-init="setTotals(item)"
+                                                class="align-items-center">
                                                 <td>{{item.type}}</td>
-                                                <td><input class="bg-transparent text-light border-light" style="width: 3rem;" type="number" min="0" max="10" 
-                                                    ng-change="updatePrice()" ng-model="item.qty"></td>
+                                                <td><input class="bg-transparent text-light border-light"
+                                                        style="width: 3rem;" type="number" min="0" max="10"
+                                                        ng-change="updatePrice()" ng-model="item.qty"></td>
                                                 <td style="width: 4rem;">{{item.price * item.qty | currency}}</td>
                                                 <td style="width: 2rem;">
                                                     <button type="button" class="btn" ng-click="removeItem(item)">
@@ -1113,7 +1261,7 @@
                                                     </button>
                                                 </td>
                                             </tr>
-                                        
+
                                             <tr class="border-top">
                                                 <td colspan="2" class="fw-bold fs-4">Total</td>
                                                 <td>{{totalPrice | currency}}</td>

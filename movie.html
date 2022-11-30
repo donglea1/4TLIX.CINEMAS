@@ -229,8 +229,8 @@
                                                 repellendus, eligendi ipsa in nisi, optio laudantium laborum.</p>
                                             <div class="title d-flex align-items-center mt-4 border-bottom">
                                                 <h5 class="me-auto">VIDEOS & PHOTOS</h5>
-                                                <a class="ms-auto text-decoration-none" style="font-size: 14px"
-                                                    href="">All 5 Videos & 245 Photos </a>
+                                                <a class="ms-auto text-decoration-none text-dark"
+                                                    style="font-size: 14px" href="">All 5 Videos & 245 Photos </a>
                                             </div>
                                             <div class="mv-single-item d-flex mt-4">
                                                 <a class="me-4" data-bs-toggle="modal" data-bs-target="#img-item"
@@ -250,8 +250,8 @@
                                             </div>
                                             <div class="title d-flex align-items-center mt-4 border-bottom">
                                                 <h5 class="me-auto">CAST</h5>
-                                                <a class="ms-auto text-decoration-none" style="font-size: 14px"
-                                                    href="">Full Cast & Crew </a>
+                                                <a class="ms-auto text-decoration-none text-dark"
+                                                    style="font-size: 14px" href="">Full Cast & Crew </a>
                                             </div>
                                             <div class="mvcast-item">
                                                 <div class="cast-it my-4">
@@ -993,7 +993,7 @@
                                                             </thead>
                                                             <tbody>
                                                                 <tr ng-repeat="t in tickets">
-                                                                    <th scope="row">{{t.type}}</th>
+                                                                    <th scope="row">{{t.name}}</th>
                                                                     <td>{{t.price | currency}}</td>
                                                                     <td><button type="button"
                                                                             class="btn btn-success w-100 fw-bold"
@@ -1058,7 +1058,7 @@
                                                             <tr ng-repeat="s in seats">
                                                                 <td>
                                                                     <input type="checkbox" class="btn-check"
-                                                                        id="{{s.seat_id1}}" 
+                                                                        id="{{s.seat_id1}}"
                                                                         ng-disabled="!selected.includes(s.seat_id1) && selected.length === limitSeat"
                                                                         ng-checked="exists(s.seat_id1, selected)"
                                                                         ng-click="toggle(s.seat_id1, selected)"
@@ -1194,7 +1194,7 @@
                                                         </tfoot>
                                                     </table>
                                                 </div>
-                                                <div class="position-absolute" style="left: 50rem; bottom: 5rem;">
+                                                <div class="position-absolute" style="left: 52rem; bottom: 4rem;">
                                                     <div class="row d-lg-flex flex-column ">
                                                         <div
                                                             class="col-lg-3 mb-lg-3 d-flex flex-row align-items-center">
@@ -1224,17 +1224,139 @@
                                                             </span>
                                                             <span class="text-uppercase fw-bold ms-lg-1">Occupied</span>
                                                         </div>
-                                                        <br>
-                                                        <p>{{selected | json}}</p>
-
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="step-3" role="tabpanel"
-                                            aria-labelledby="btn-step-3" tabindex="0">3</div>
+                                            aria-labelledby="btn-step-3" tabindex="0">
+                                            <div class="d-flex flex-row row row-cols-2 row-cols-lg-3 overflow-auto justify-content-center"
+                                                style="height: 20rem;">
+                                                <div class="col mb-4" ng-repeat="item in foods">
+                                                    <div class="card">
+                                                        <img src="{{item.img}}" class="card-img-top" alt="...">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <h6 class="card-title text-center">{{item.name}}</h6>
+                                                                <div class="col">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col">
+                                                                            <h5>{{item.price | currency}}</h5>
+                                                                        </div>
+                                                                        <div class="col"><button type="button"
+                                                                                class="btn btn-success w-100 fw-bold"
+                                                                                ng-click="addItem(item)">+1</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="tab-pane fade" id="step-4" role="tabpanel"
-                                            aria-labelledby="btn-step-4" tabindex="0">4</div>
+                                            aria-labelledby="btn-step-4" tabindex="0">
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h3 class="text-center mb-3">BILLING INFORMATION</h3>
+                                                    <form name="FormCheckOut" novalidate>
+                                                        <div class="mb-3">
+                                                            <label for="fullname" class="form-label">Name</label>
+                                                            <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp"
+                                                                name="fullname" ng-model="fullnameModel" required>
+                                                        </div>
+                                                        <!-- ERROR FOR FULLNAME -->
+                                                        <div ng-if="FormCheckOut.$submitted || FormCheckOut.fullname.$dirty" class="mb-2"
+                                                            ng-messages="FormCheckOut.fullname.$error" style="color: #D10024;" role="alert">
+                                                            <div ng-message="required"><strong>Họ và tên không được để trống!</strong></div>
+                                                            <div ng-message-default><strong>Họ và tên không chính xác!</strong></div>
+                                                        </div>
+                                                        <!-- ERROR FOR FULLNAME -->
+
+                                                        <div class="mb-3">
+                                                            <label for="email" class="form-label">Email</label>
+                                                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                                                                name="email" ng-model="emailModel" required>
+                                                        </div>
+                                                        <!-- ERROR FOR EMAIL -->
+                                                        <div ng-if="FormCheckOut.$submitted || FormCheckOut.email.$dirty" class="mb-2"
+                                                            ng-messages="FormCheckOut.email.$error" style="color: #D10024;" role="alert">
+                                                            <div ng-message="required"><strong>Email không được để trống!</strong></div>
+                                                            <div ng-message-default><strong>Email không đúng định dạng!</strong></div>
+                                                        </div>
+                                                        <!-- ERROR FOR EMAIL -->
+                                                        
+                                                        <div class="mb-3">
+                                                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                                                            <input type="text" class="form-control" id="phoneNumber" maxlength="10" minlength="10"
+                                                                name="phone" ng-model="phoneModel" pattern="\d+" required aria-describedby="emailHelp">
+                                                        </div>
+                                                        <!-- ERROR FOR PHONE NUMBER -->
+                                                        <div ng-if="FormCheckOut.$submitted || FormCheckOut.phone.$dirty" class="mb-2"
+                                                            ng-messages="FormCheckOut.phone.$error" style="color: #D10024;" role="alert">
+                                                            <div ng-message="required"><strong>Số điện thoại không được để trống!</strong></div>
+                                                            <div ng-message="pattern"><strong>Vui lòng nhập số!</strong></div>
+                                                            <div ng-message-default><strong>Số điện thoại không chính xác!</strong></div>
+                                                        </div>
+                                                        <!-- ERROR FOR PHONE NUMBER -->
+
+                                                        <div class="mb-3">
+                                                            <div class="row d-lg-flex flex-lg-row flex-column">
+                                                                <div class="col col-lg-2">
+                                                                    <label class="form-label">Pay by</label>
+                                                                </div>
+                                                                <div class="col col-lg-10">
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                        <label class="form-check-label" for="inlineRadio1"><img src="https://static.mservice.io/img/logo-momo.png" style="width: 5rem;" class="border rounded" alt=""></label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                                        <label class="form-check-label" for="inlineRadio2"><img src="https://thuthuatmaytinh.vn/wp-content/uploads/2019/02/ZaloPay-logo.png" style="width: 5rem;" class="border rounded" alt=""></label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                                                        <label class="form-check-label" for="inlineRadio3"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png" style="width: 5rem;" class="border rounded" alt=""></label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+                                                                        <label class="form-check-label" for="inlineRadio5"><img src="https://cdn1.iconfinder.com/data/icons/logos-brands-in-colors/436/Google_Pay_GPay_Logo-512.png" style="width: 5rem;" class="border rounded" alt=""></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            
+                                                        </div>
+                                                        <!-- ERROR FOR PHONE NUMBER -->
+                                                        <div ng-if="FormCheckOut.$submitted || FormCheckOut.phone.$dirty" class="mb-2"
+                                                            ng-messages="FormCheckOut.phone.$error" style="color: #D10024;" role="alert">
+                                                            <div ng-message="required"><strong>Số điện thoại không được để trống!</strong></div>
+                                                            <div ng-message="pattern"><strong>Vui lòng nhập số!</strong></div>
+                                                            <div ng-message-default><strong>Số điện thoại không chính xác!</strong></div>
+                                                        </div>
+                                                        <!-- ERROR FOR PHONE NUMBER -->
+                                                    </form>
+                                                </div>
+                                                <div class="position-absolute" style="left: 49rem; bottom: 1rem; width: 20rem;">
+                                                    <div class="row d-lg-flex flex-row mb-2 fw-bold">
+                                                        <div class="col-lg-9">Order ID</div>
+                                                        <div class="col-lg-3">aasdasd</div>
+                                                    </div>
+                                                    <div class="row d-lg-flex flex-row mb-3 fw-bold">
+                                                        <div class="col-lg-9">address</div>
+                                                        <div class="col-lg-3">time</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <button class="btn btn-success text-uppercase">
+                                                            <i class="fa-solid fa-check"></i> confirm
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="tab-pane fade" id="step-5" role="tabpanel"
                                             aria-labelledby="btn-step-5" tabindex="0">5</div>
                                     </div>
@@ -1250,21 +1372,35 @@
                                         <tbody>
                                             <tr ng-repeat="item in carts" ng-init="setTotals(item)"
                                                 class="align-items-center">
-                                                <td>{{item.type}}</td>
+                                                <td style="width: 8rem;">{{item.name}}</td>
                                                 <td><input class="bg-transparent text-light border-light"
                                                         style="width: 3rem;" type="number" min="0" max="10"
                                                         ng-change="updatePrice()" ng-model="item.qty"></td>
-                                                <td style="width: 4rem;">{{item.price * item.qty | currency}}</td>
-                                                <td style="width: 2rem;">
+                                                <td>{{item.price * item.qty | currency}}</td>
+                                                <td>
                                                     <button type="button" class="btn" ng-click="removeItem(item)">
                                                         <i class="fa-solid fa-xmark"></i>
                                                     </button>
                                                 </td>
                                             </tr>
+                                            <tr ng-show="selected.length > 0">
+                                                <td colspan="2" class="fw-bold fs-6">Seats Code:</td>
+                                                <td>
+                                                    <p style="width: 7rem; word-wrap:break-word;"
+                                                        class="text-uppercase flex-wrap"><span
+                                                            ng-repeat="item in selected">{{item}}, </span></p>
+                                                </td>
+                                            </tr>
 
-                                            <tr class="border-top">
-                                                <td colspan="2" class="fw-bold fs-4">Total</td>
-                                                <td>{{totalPrice | currency}}</td>
+                                            <tr class="border-top" ng-show="carts.length > 0">
+                                                <td colspan="2" class="fw-bold fs-4">Total:</td>
+                                                <td class="text-warning fw-bold fs-3">{{totalPrice | currency}}</td>
+                                            </tr>
+                                            <tr ng-hide="carts.length > 0">
+                                                <th class="text-center text-uppercase fs-2" colspan="4">
+                                                    <i class="fa-regular fa-face-laugh-squint"></i>
+                                                    <br> Waiting <br> for <br> your choice
+                                                </th>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -1278,17 +1414,17 @@
                         <div class="col col-lg-2">
                             <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                                 data-bs-target="#times_days">
-                                Back to first
+                                <i class="fa-solid fa-square-caret-left"></i> Back to first
                             </button>
                         </div>
                         <div class="col">
                             <button class="btn btn-primary btnPrev">
-                                Back step
+                                <i class="fa-solid fa-left-long"></i> Back step
                             </button>
                         </div>
                         <div class="col">
                             <button class="btn btn-primary btnNext ms-lg-5">
-                                Next step
+                                Next step <i class="fa-solid fa-right-long"></i>
                             </button>
                         </div>
                     </div>

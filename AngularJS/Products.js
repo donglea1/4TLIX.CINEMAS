@@ -24,9 +24,18 @@ app.controller("shopping_cart", function ($scope, $window) {
     ];
 
     $scope.tickets = [
-        { id: "v1", type: "Stand-2D", price: 95, qty: 1 },
-        { id: "v2", type: "Medium-2D", price: 115, qty: 1 },
-        { id: "v3", type: "Vip-2D", price: 135, qty: 1 }
+        { id: "v1", name: "Stand-2D", price: 95, qty: 1 },
+        { id: "v2", name: "Medium-2D", price: 115, qty: 1 },
+        { id: "v3", name: "Vip-2D", price: 135, qty: 1 }
+    ];
+
+    $scope.foods = [
+        { id: "f1", name: "Combo Special 1", price: 95, qty: 1, img:"https://www.essexcinemas.com/img/largecombodeal600.png" },
+        { id: "f2", name: "Combo Special 2", price: 115, qty: 1, img:"https://pbs.twimg.com/media/D4n8CdeW4AIX6D9.jpg" },
+        { id: "f3", name: "Combo Family", price: 115, qty: 1, img:"https://scontent.fsgn8-3.fna.fbcdn.net/v/t1.6435-9/96838040_2632125600222566_260813199014625280_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9267fe&_nc_ohc=IdDroL3YsyQAX9b9wvE&_nc_ht=scontent.fsgn8-3.fna&oh=00_AfCJwi9wHj6f0nXEAXk19OE2T0IxMu8szASRLFGAuuYG2A&oe=63AEFB2B" },
+        { id: "f4", name: "Combo Couple", price: 115, qty: 1, img:"https://foodie.my/wp-content/uploads/2019/02/51683045_120098665737899_303768539812162557_n.jpg" },
+        { id: "f5", name: "Combo MjoInir", price: 115, qty: 1, img:"https://www.laughingplace.com/w/wp-content/uploads/2022/07/mjolnir-popcorn-container-now-available-for-pre-order-through-amc-theaters-movie-merchandise.jpg" },
+        { id: "f6", name: "Combo Iron Man", price: 135, qty: 1, img:"https://cf.shopee.co.th/file/ab3cba2355ab033cb46189324adfe462" }
     ];
 
 
@@ -56,6 +65,7 @@ app.controller("shopping_cart", function ($scope, $window) {
     };
 
     $scope.limitSeat = 0;
+    $scope.selected = [];
 
     $scope.updatePrice = function () {
         var totalPrice = 0;
@@ -78,7 +88,7 @@ app.controller("shopping_cart", function ($scope, $window) {
         $scope.updatePrice();
     }
 
-    $scope.selected = [];
+    
 
     $scope.toggle = function (item, list) {
         var idx = list.indexOf(item);
@@ -87,7 +97,6 @@ app.controller("shopping_cart", function ($scope, $window) {
         }else {
             list.push(item);
         }
-
     };
 
     $scope.exists = function (item, list) {

@@ -102,4 +102,58 @@ app.controller("shopping_cart", function ($scope, $window) {
     $scope.exists = function (item, list) {
         return list.indexOf(item) > -1;
     };
+
+    // Create random OrderID
+    $scope.getRandomInt = function (max) {
+        return Math.floor(Math.random() * max);
+    }
+
+    $scope.PaySuccess = true;
+    $scope.PayFail = false;
+    $scope.pay = function (index) {
+        console.log(index)
+        if (index.FormCheckOut.$valid) {
+            // Show notification add success
+            document.getElementById("OrderID").innerText = "DH" + $scope.getRandomInt(1000000000);
+            $scope.showNotification(true, false);
+        } else {
+            $scope.showNotification(false, true);
+        }
+    }
+
+    $scope.showNotification = function (PaySuccess, PayFail) {
+        $scope.PaySuccess = PaySuccess;
+        $scope.PayFail = PayFail;
+        const toastLiveExample = document.getElementById('liveToast');
+        const toast = new bootstrap.Toast(toastLiveExample);
+        toast.show();
+    }
+
+
+    $scope.getRandomInt = function (max) {
+        return Math.floor(Math.random() * max);
+    }
+    
+
+    $scope.PaySuccess = true;
+    $scope.PayFail = false;
+    $scope.tks = false;
+    $scope.pay = function (index) {
+        if (index.userForm.$valid) {
+            // Show notification add success
+            $scope.showNotification(true, false);
+            document.getElementById("OrderID").innerText = "MV" + $scope.getRandomInt(1000000000);
+        } else {
+            $scope.showNotification(false, true);
+        }
+    }
+
+    $scope.showNotification = function (PaySuccess, PayFail) {
+        $scope.PaySuccess = PaySuccess;
+        $scope.PayFail = PayFail;
+        $scope.tks = PaySuccess;
+        const toastLiveExample = document.getElementById('liveToast');
+        const toast = new bootstrap.Toast(toastLiveExample);
+        toast.show();
+    }
 });

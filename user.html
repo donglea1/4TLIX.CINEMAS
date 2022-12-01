@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 
 <head>
     <title>USER</title>
@@ -269,7 +269,7 @@
         </div>
     </div>
 
-    <main class="position-relative">
+    <main class="position-relative" ng-controller="checkUser">
         <!-- Profile -->
         <div class="bg-profile position-relative bg-dark w-100 d-none d-lg-flex">
         </div>
@@ -318,6 +318,7 @@
                                         <label for="email" class="form-label">Email:</label>
                                         <input type="email" class="form-control text-info" placeholder="Enter email"
                                             id="email" name="email" ng-model="email" required>
+                                        <!-- ERROR FOR EMAIL -->
                                         <span class="text-info" ng-show="userForm.email.$valid">
                                             Looks good!
                                         </span>
@@ -326,41 +327,59 @@
                                             <span ng-show="userForm.email.$error.required">Email is required.</span>
                                             <span ng-show="userForm.email.$error.email">Invalid email address.</span>
                                         </span>
+                                        <!-- ERROR FOR EMAIL -->
                                     </div>
                                     <div class="col">
-                                        <label for="pwd" class="form-label">Password:</label>
+                                        <label for="pass" class="form-label">Password:</label>
                                         <input type="password" class="form-control text-info"
-                                            placeholder="Enter password" name="pswd" ng-model="pswd" required>
-                                        <span class="text-info" ng-show="userForm.pswd.$valid">
+                                            placeholder="Enter password" name="pass" minlength="5" maxlength="16"
+                                            ng-model="pass" required>
+                                        <!-- ERROR FOR PASSWORD -->
+                                        <span class="text-info" ng-show="userForm.pass.$valid">
                                             Looks good!
                                         </span>
-                                        <span class="text-warning" ng-show="userForm.pswd.$dirty">
-                                            <span ng-show="userForm.pswd.$error.required">Password is required.</span>
+                                        <span class="text-warning"
+                                            ng-show="userForm.pass.$dirty && userForm.pass.$invalid">
+                                            <span ng-show="userForm.pass.$error.required">Password is required.</span>
+                                            <span ng-show="userForm.pass.$error.minlength">Passwords must be greater
+                                                than 5 characters!</span>
+                                            <span ng-show="userForm.pass.$error.maxlength">The password must not exceed
+                                                16 characters!</span>
                                         </span>
+                                        <!-- ERROR FOR PASSWORD -->
                                     </div>
                                 </div>
-                                <div class="row d-flex flex-lg-row flex-column">
+                                <div class="row d-flex flex-lg-row flex-column mb-3">
                                     <div class="col">
-                                        <label for="fname" class="form-label">First name:</label>
+                                        <label for="fname" class="form-label">Full name:</label>
                                         <input type="text" class="form-control text-info" placeholder="First name"
-                                            name="fname" maxlength="20" ng-model="fname" required>
+                                            name="fname" maxlength="25" ng-model="fname" required>
+                                        <!-- ERROR FOR FIRST NAME -->
                                         <span class="text-info" ng-show="userForm.fname.$valid">
                                             Looks good!
                                         </span>
                                         <span class="text-warning" ng-show="userForm.fname.$dirty">
-                                            <span ng-show="userForm.fname.$error.required">First name is required.</span>
+                                            <span ng-show="userForm.fname.$error.required">Full name is
+                                                required.</span>
                                         </span>
+                                        <!-- ERROR FOR FIRST NAME -->
                                     </div>
                                     <div class="col">
-                                        <label for="lname" class="form-label">Last name:</label>
-                                        <input type="text" class="form-control text-info" placeholder="Last name"
-                                            name="lname" maxlength="25" ng-model="lname" required>
-                                        <span class="text-info" ng-show="userForm.lname.$valid">
+                                        <label for="phone" class="form-label">Phone number:</label>
+                                        <input type="text" class="form-control text-info" placeholder="Phone number"
+                                            name="phone" id="phone" maxlength="10" minlength="10" ng-model="phone"
+                                            pattern="\d+" required>
+                                        <!-- ERROR FOR PHONE NUMBER -->
+                                        <span class="text-info" ng-show="userForm.phone.$valid">
                                             Looks good!
                                         </span>
-                                        <span class="text-warning" ng-show="userForm.lname.$dirty">
-                                            <span ng-show="userForm.lname.$error.required">Last name is required.</span>
+                                        <span class="text-warning d-flex flex-column" ng-show="userForm.phone.$dirty">
+                                            <span ng-show="userForm.phone.$error.required">Phone number is
+                                                required!</span>
+                                            <span ng-show="userForm.phone.$error.pattern">Please fill number!</span>
+                                            <span ng-show="userForm.phone.$invalid">Incorrect phone number!</span>
                                         </span>
+                                        <!-- ERROR FOR PHONE NUMBER -->
                                     </div>
                                 </div>
                                 <div class="row d-flex flex-lg-row flex-column mb-3">
@@ -388,8 +407,8 @@
                                     </div>
                                     <div class="col">
                                         <label for="city" class="form-label">City:</label>
-                                        <select class="form-select" required>
-                                            <option selected disabled ng-model="city">Choose...</option>
+                                        <select class="form-select" ng-model="city" required>
+                                            <option selected disabled value="">Choose...</option>
                                             <option value="hcm">Ho Chi Minh</option>
                                             <option value="hn">Ha Noi</option>
                                             <option value="na">Nghe An</option>
@@ -406,73 +425,116 @@
                                 <div class="row d-flex flex-lg-row flex-column">
                                     <div class="col d-flex justify-content-center justify-content-lg-start">
                                         <button type="submit" class="btn btn-danger text-uppercase fw-bold rounded-pill"
-                                            ng-disabled="userForm.email.$dirty && userForm.email.$invalid ||  
-                                            userForm.pswd.$dirty  ||
-                                            userForm.fname.$dirty ||
-                                            userForm.lname.$dirty ||
-                                            userForm.district.$dirty  ||
-                                            userForm.city.$dirty ||
-                                            ">save</button>
-                                        <h4 class="text-success" ng-show="userForm.$valid">success</h4>
+                                            ng-click="pay(this)">save</button>
                                     </div>
                                 </div>
                             </form>
+
 
                             <h6 class="text-light ms-4 mt-4 mb-3">02. CHANGE PASSWORD</h6>
-                            <form class="mx-3 needs-validation">
+                            <form class="mx-3 needs-validation" name="passForm">
                                 <div class="row d-flex flex-column mb-3">
-                                    <div class="col">
-                                        <label for="email" class="form-label">Old Password:</label>
-                                        <input type="text" class="form-control text-info"
-                                            placeholder="Enter old password" required name="email">
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            Please choose a username.
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <label for="pwd" class="form-label">New Password:</label>
+                                    <div class="col mb-3">
+                                        <label for="pswd" class="form-label">Old Password:</label>
                                         <input type="password" class="form-control text-info"
-                                            placeholder="Enter new password" required name="pswd">
-                                        <div class="valid-feedback">
+                                            placeholder="Enter old password" name="pswd" ng-model="pswd" minlength="5"
+                                            maxlength="16" required>
+                                        <!-- ERROR FOR OLD PASS -->
+                                        <span class="text-info" ng-show="passForm.pswd.$valid">
                                             Looks good!
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            Please choose a username.
-                                        </div>
+                                        </span>
+                                        <span class="text-warning d-flex flex-column"
+                                            ng-show="passForm.pswd.$dirty && passForm.pswd.$invalid">
+                                            <span ng-show="passForm.pswd.$error.required">Old Password is
+                                                required!</span>
+                                            <span ng-show="passForm.pswd.$error.minlength">Passwords must be greater
+                                                than 5 characters!</span>
+                                            <span ng-show="passForm.pswd.$error.maxlength">The password must not exceed
+                                                16 characters!</span>
+                                        </span>
+                                        <!-- ERROR FOR OLD PASS -->
+                                    </div>
+                                    <div class="col">
+                                        <label for="newpswd" class="form-label">New Password:</label>
+                                        <input type="password" class="form-control text-info"
+                                            placeholder="Enter new password" name="newpswd" ng-model="newpswd"
+                                            minlength="5" maxlength="16" required>
+                                        <!-- ERROR FOR NEW PASS -->
+                                        <span class="text-info" ng-show="passForm.newpswd.$valid">
+                                            Looks good!
+                                        </span>
+                                        <span class="text-warning d-flex flex-column"
+                                            ng-show="passForm.newpswd.$dirty && passForm.newpswd.$invalid">
+                                            <span ng-show="passForm.newpswd.$error.required">New Password is
+                                                required!</span>
+                                            <span ng-show="passForm.newpswd.$error.minlength">Passwords must be greater
+                                                than 5 characters!</span>
+                                            <span ng-show="passForm.newpswd.$error.maxlength">The password must not
+                                                exceed 16 characters!</span>
+                                        </span>
+                                        <!-- ERROR FOR NEW PASS -->
                                     </div>
                                 </div>
                                 <div class="row d-flex flex-column mb-3">
                                     <div class="col">
-                                        <label for="email" class="form-label">Confirm New Password:</label>
-                                        <input type="text" class="form-control text-info" placeholder="First name"
-                                            name="email" required>
+                                        <label for="repswd" class="form-label">Re-Password:</label>
+                                        <input type="password" class="form-control text-info"
+                                            placeholder="Enter Re-Password" name="repswd" pattern="{{newpswd}}"
+                                            ng-model="repswd" minlength="5" maxlength="16" required>
                                     </div>
-                                    <div class="valid-feedback">
+                                    <!-- ERROR FOR RE-PASS -->
+                                    <span class="text-info" ng-show="passForm.repswd.$valid">
                                         Looks good!
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        Please choose a username.
-                                    </div>
+                                    </span>
+                                    <span class="text-warning d-flex flex-column"
+                                        ng-show="passForm.repswd.$dirty && passForm.repswd.$invalid">
+                                        <span ng-show="passForm.repswd.$error.pattern">Re-password is not the same as
+                                            the new password!</span>
+                                    </span>
+                                    <!-- ERROR FOR RE-PASS -->
                                 </div>
-
                                 <div class="row mb-lg-3 mb-3">
                                     <div class="col d-flex justify-content-center justify-content-lg-start">
-                                        <button type="submit"
-                                            class="btn btn-danger text-uppercase fw-bold rounded-pill">change</button>
+                                        <button type="submit" class="btn btn-danger text-uppercase fw-bold rounded-pill"
+                                            ng-click="pay(this)">
+                                            change</button>
                                     </div>
                                 </div>
                             </form>
+                            <!-- notification -->
+                            <div class="toast-container position-fixed end-0 p-3" style="top: 10%;">
+                                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-header bg-success text-light" ng-show="PaySuccess">
+                                        <!-- Success -->
+                                        <strong class="me-auto text-uppercase" ng-show="PaySuccess"><i
+                                                class="fa-regular fa-circle-check fs-5"></i> successful !</strong>
+                                        <small>11 mins ago</small>
+                                        <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="toast-header bg-danger text-light" ng-show="PayFail">
+                                        <!-- Fail -->
+
+                                        <strong class="me-auto text-uppercase align-content-center" ng-show="PayFail"><i
+                                                class="fa-regular fa-circle-xmark fs-5"></i> failure !</strong>
+                                        <small>11 mins ago</small>
+                                        <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="toast-body">
+                                        <div ng-show="PaySuccess">Update successful!</div>
+                                        <div ng-show="PayFail">Update fail, please check the information!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- notification -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End Profile -->
-
-
 
         <!-- Footer -->
         <div class="footer position-relative bg-dark w-100 h-100">
@@ -546,6 +608,23 @@
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
 
+    <!-- Angular js  -->
+    <script src="AngularJS/ngApp.js" type="text/javascript"></script>
+    <script src="AngularJS/Validation_User.js" type="text/javascript"></script>
+
+
+
+    <script>
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+        if (toastTrigger) {
+            toastTrigger.addEventListener('click', () => {
+                const toast = new bootstrap.Toast(toastLiveExample)
+
+                toast.show()
+            })
+        }
+    </script>
 
 
 </body>

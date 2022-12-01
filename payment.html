@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="en" ng-app="myApp" ng-controller="shopping_cart">
+
+<head>
+    <title>PAYMENT</title>
+    <link rel="icon" type="image/x-icon" href="IMG/Icon_app.png">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font Google  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/movie.css">
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- AngularJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+        integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <header class="sticky-top" style="z-index: 2;">
+        <!-- place navbar here -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="logo-mobile d-lg-none">
+                    <a href="index.html">
+                        <img src="IMG/4tlix-logo.png" style="width: 280px;" alt=""></a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="row w-100 d-flex flex-row">
+                        <div class="col-2 logo">
+                            <a class="navbar-brand " href="index.html">
+                                <img src="IMG/4tlix-logo.png" alt=""
+                                    class="d-inline-block align-text-top position-absolute" id="logo"
+                                    style="width: 17%;">
+                                <img src="IMG/4tlix-logo-bg.png" alt=""
+                                    class="d-inline-block align-text-top position-absolute" id="bg-logo"
+                                    style="width: 17%;">
+                            </a>
+                        </div>
+                        <div class="col-9 ms-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="navbar-nav me-auto ms-3 mb-2 mb-lg-0">
+
+                                        <li class="nav-item btn-nav b1">
+                                            <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i>
+                                                HOME</a>
+                                        </li>
+                                        <li class="nav-item btn-nav b1">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i>
+                                                MOVIES</a>
+                                        </li>
+                                        <li class="nav-item btn-nav b1">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-star"></i> NEW</a>
+                                        </li>
+                                        <li class="nav-item btn-nav b1">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i>
+                                                CONTACT</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 d-flex flex-row-reverse">
+                                    <div class="login">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                            <li class="nav-item">
+                                                <form class="d-md-flex flex-row mb-2">
+                                                    <div class="input-group">
+                                                        <input type="search" class="form-control rounded-start"
+                                                            placeholder="Search" aria-label="Search"
+                                                            aria-describedby="search-addon" />
+                                                        <button type="button" class="btn btn-danger w-25"><i
+                                                                class="fa-solid fa-magnifying-glass"></i></button>
+                                                    </div>
+                                                </form>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="#">HELP</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <button type="button" class="btn text-light fw-bold"
+                                                    data-bs-toggle="modal" data-bs-target="#Login">
+                                                    LOG IN
+                                                </button>
+                                            </li>
+                                            <li class="nav-item">
+                                                <button type="button" class="btn btn-danger rounded-4 fw-bold"
+                                                    data-bs-toggle="modal" data-bs-target="#SignUp">
+                                                    SIGN UP
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main
+        style="background: url(https://www.itl.cat/pngfile/big/0-1484_galaxy-tumblr-wallpapers-desktop-background-simple-wallpaper-dark.jpg);">
+        <!-- Profile Movie -->
+        <div class="container justify-content-center">
+            <div class="row w-100 mb-3" style="height: 4rem;">
+                <div id="nav-tab" role="tablist"
+                    class="row text-center d-flex flex-row justify-content-center align-items-center step-selected g-2 w-100 h-100">
+                    <button id="btn-step-1" data-bs-toggle="tab" data-bs-target="#step-1" type="button" role="tab"
+                        class="nav-link active col progress-step step-unselected d-grid align-items-center border-0 my-lg-4">1.
+                        Select tickets</button>
+                    <button id="btn-step-2" data-bs-toggle="tab" data-bs-target="#step-2" type="button" role="tab"
+                        class="nav-link col progress-step step-unselected d-grid align-items-center border-0 my-lg-4">2.
+                        Select seats</button>
+                    <button id="btn-step-3" data-bs-toggle="tab" data-bs-target="#step-3" type="button" role="tab"
+                        class="nav-link  col progress-step step-unselected d-grid align-items-center border-0 my-lg-4">3.
+                        Select foods</button>
+                    <button id="btn-step-4" data-bs-toggle="tab" data-bs-target="#step-4" type="button" role="tab"
+                        class="nav-link col progress-step step-unselected d-grid align-items-center border-0 my-lg-4">4.
+                        Verify order</button>
+                    <button id="btn-step-5" data-bs-toggle="tab" data-bs-target="#step-5" type="button" role="tab"
+                        class="nav-link col progress-step step-unselected d-grid align-items-center border-0 my-lg-4">5.
+                        Pay order</button>
+                </div>
+            </div>
+
+            <div class="row h-100 mt-lg-5 mt-0">
+                <div class="col-lg-8 mx-0">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="step-1" role="tabpanel" aria-labelledby="btn-step-1"
+                            tabindex="0">
+                            <div class="row d-lg-flex flex-row justify-content-center">
+                                <div class="col-lg-3 col-7 me-lg-5">
+                                    <img class="h-100"
+                                        src="https://www.cgv.vn/media/catalog/product/cache/1/thumbnail/185x260/8fed44cf50ba9642d30b9a74c2fa5e2d/b/p/bp2_official_poster_1_.jpg"
+                                        alt="">
+                                </div>
+                                <div class="col text-light">
+                                    <h2 class="text-uppercase text-lg-start text-center text-light">Wakanda
+                                        forever
+                                    </h2>
+                                    <div class="fs-5">Showing on Wed 23 Nov 10:00</div>
+                                    <div class="fs-5">4TLIX Le Van Viet</div>
+                                    <div class="ticket">
+                                        <table class="table table-borderless text-light">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">TICKET</th>
+                                                    <th scope="col">PRICE</th>
+                                                    <th scope="col"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="t in tickets">
+                                                    <th scope="row">{{t.name}}</th>
+                                                    <td>{{t.price | currency}}</td>
+                                                    <td><button type="button" class="btn btn-success w-100 fw-bold"
+                                                            ng-click="addItem(t)">+1</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="step-2" role="tabpanel" aria-labelledby="btn-step-2"
+                            tabindex="0">
+                            <div class="row d-flex flex-row">
+                                <div class="col-lg-1 d-lg-flex d-none">
+                                    <table class="table table-borderless text-center text-light fw-bold"
+                                        style="margin-top: 3.8rem; height: 82%;">
+                                        <tbody>
+                                            <tr>
+                                                <td>A</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B</td>
+                                            </tr>
+                                            <tr>
+                                                <td>C</td>
+                                            </tr>
+                                            <tr>
+                                                <td>D</td>
+                                            </tr>
+                                            <tr>
+                                                <td>E</td>
+                                            </tr>
+                                            <tr>
+                                                <td>F</td>
+                                            </tr>
+                                            <tr>
+                                                <td>G</td>
+                                            </tr>
+                                            <tr>
+                                                <td>H</td>
+                                            </tr>
+                                            <tr>
+                                                <td>I</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-11 col-12 overflow-auto bg-transparent">
+                                    <table class="table table-borderless text-warning">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="11">
+                                                    <div id="screen"
+                                                        class="bg-light text-dark my-1 text-center align-content-center">
+                                                        SCREEN
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="s in seats">
+                                                <td>
+                                                    <input type="checkbox" class="btn-check" id="{{s.seat_id1}}"
+                                                        ng-disabled="!selected.includes(s.seat_id1) && selected.length === limitSeat"
+                                                        ng-checked="exists(s.seat_id1, selected)"
+                                                        ng-click="toggle(s.seat_id1, selected)" autocomplete="off">
+                                                    <label class="btn btn-outline-danger seat" for="{{s.seat_id1}}">
+                                                        <i class="fa-solid fa-couch"></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <input type="checkbox" class="btn-check" id="{{s.seat_id2}}"
+                                                        ng-disabled="!selected.includes(s.seat_id2) && selected.length === limitSeat"
+                                                        ng-checked="exists(s.seat_id2, selected)"
+                                                        ng-click="toggle(s.seat_id2, selected)" autocomplete="off">
+                                                    <label class="btn btn-outline-danger seat" for="{{s.seat_id2}}">
+                                                        <i class="fa-solid fa-couch"></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <input type="checkbox" class="btn-check" id="{{s.seat_id3}}"
+                                                        ng-disabled="!selected.includes(s.seat_id3) && selected.length === limitSeat"
+                                                        ng-checked="exists(s.seat_id3, selected)"
+                                                        ng-click="toggle(s.seat_id3, selected)" autocomplete="off">
+                                                    <label class="btn btn-outline-danger seat" for="{{s.seat_id3}}">
+                                                        <i class="fa-solid fa-couch"></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <input type="checkbox" class="btn-check" id="{{s.seat_id4}}"
+                                                        ng-disabled="!selected.includes(s.seat_id4) && selected.length === limitSeat"
+                                                        ng-checked="exists(s.seat_id4, selected)"
+                                                        ng-click="toggle(s.seat_id4, selected)" autocomplete="off">
+                                                    <label class="btn btn-outline-danger seat" for="{{s.seat_id4}}">
+                                                        <i class="fa-solid fa-couch"></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <input type="checkbox" class="btn-check" id="{{s.seat_id5}}"
+                                                        ng-disabled="!selected.includes(s.seat_id5) && selected.length === limitSeat"
+                                                        ng-checked="exists(s.seat_id5, selected)"
+                                                        ng-click="toggle(s.seat_id5, selected)" autocomplete="off">
+                                                    <label class="btn btn-outline-danger seat" for="{{s.seat_id5}}">
+                                                        <i class="fa-solid fa-couch"></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <input type="checkbox" class="btn-check" id="{{s.seat_id6}}"
+                                                        ng-disabled="!selected.includes(s.seat_id6) && selected.length === limitSeat"
+                                                        ng-checked="exists(s.seat_id6, selected)"
+                                                        ng-click="toggle(s.seat_id6, selected)" autocomplete="off">
+                                                    <label class="btn btn-outline-danger seat" for="{{s.seat_id6}}">
+                                                        <i class="fa-solid fa-couch"></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <input type="checkbox" class="btn-check" id="{{s.seat_id7}}"
+                                                        ng-disabled="!selected.includes(s.seat_id7) && selected.length === limitSeat"
+                                                        ng-checked="exists(s.seat_id7, selected)"
+                                                        ng-click="toggle(s.seat_id7, selected)" autocomplete="off">
+                                                    <label class="btn btn-outline-danger seat" for="{{s.seat_id7}}">
+                                                        <i class="fa-solid fa-couch"></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <input type="checkbox" class="btn-check" id="{{s.seat_id8}}"
+                                                        ng-disabled="!selected.includes(s.seat_id8) && selected.length === limitSeat"
+                                                        ng-checked="exists(s.seat_id8, selected)"
+                                                        ng-click="toggle(s.seat_id8, selected)" autocomplete="off">
+                                                    <label class="btn btn-outline-danger seat" for="{{s.seat_id8}}">
+                                                        <i class="fa-solid fa-couch"></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <input type="checkbox" class="btn-check" id="{{s.seat_id9}}"
+                                                        ng-disabled="!selected.includes(s.seat_id9) && selected.length === limitSeat"
+                                                        ng-checked="exists(s.seat_id9, selected)"
+                                                        ng-click="toggle(s.seat_id9, selected)" autocomplete="off">
+                                                    <label class="btn btn-outline-danger seat" for="{{s.seat_id9}}">
+                                                        <i class="fa-solid fa-couch"></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <input type="checkbox" class="btn-check" id="{{s.seat_id10}}"
+                                                        ng-disabled="!selected.includes(s.seat_id10) && selected.length === limitSeat"
+                                                        ng-checked="exists(s.seat_id10, selected)"
+                                                        ng-click="toggle(s.seat_id10, selected)" autocomplete="off">
+                                                    <label class="btn btn-outline-danger seat" for="{{s.seat_id10}}">
+                                                        <i class="fa-solid fa-couch"></i>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr class="text-center fw-bold">
+                                                <td>1</td>
+                                                <td>2</td>
+                                                <td>3</td>
+                                                <td>4</td>
+                                                <td>5</td>
+                                                <td>6</td>
+                                                <td>7</td>
+                                                <td>8</td>
+                                                <td>9</td>
+                                                <td>10</td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <div class="position-absolute text-light"
+                                    style="left: 30rem; bottom: 8rem; width: 40rem;">
+                                    <div class="row d-lg-flex flex-row ">
+                                        <div class="col mb-lg-3 d-flex flex-row align-items-center">
+                                            <span
+                                                class="border border-danger text-danger border-2 me-1 bg-transparent d-grid justify-content-center align-items-center"
+                                                style="width: 3.3em; height: 3em;">
+                                                <i class="fa-solid fa-couch"></i>
+                                            </span>
+                                            <span class="text-uppercase fw-bold ms-lg-1">Available
+                                            </span>
+                                        </div>
+                                        <div class="col mb-lg-3 d-flex flex-row align-items-center">
+                                            <span
+                                                class="border border-danger border-2 text-light bg-danger d-grid justify-content-center align-items-center me-1"
+                                                style="width: 3.3em; height: 3em;">
+                                                <i class="fa-solid fa-couch"></i>
+                                            </span>
+                                            <span class="text-uppercase fw-bold ms-lg-1">Selected</span>
+                                        </div>
+                                        <div class="col mb-lg-3 d-flex flex-row align-items-center">
+                                            <span
+                                                class="border border-dark border-2 text-light d-grid justify-content-center align-items-center me-1 bg-secondary text-light"
+                                                style="width: 3.3em; height: 3em;">
+                                                <i class="fa-solid fa-couch"></i>
+                                            </span>
+                                            <span class="text-uppercase fw-bold ms-lg-1">Occupied</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="step-3" role="tabpanel" aria-labelledby="btn-step-3"
+                            tabindex="0">
+                            <div class="d-flex flex-row row row-cols-2 row-cols-lg-3 overflow-auto justify-content-center"
+                                style="height: 40rem;">
+                                <div class="col mb-4" ng-repeat="item in foods">
+                                    <div class="card">
+                                        <img src="{{item.img}}" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <h6 class="card-title text-center">{{item.name}}</h6>
+                                                <div class="col">
+                                                    <div class="row d-flex flex-column align-items-center">
+                                                        <div class="col text-center">
+                                                            <h5>{{item.price | currency}}</h5>
+                                                        </div>
+                                                        <div class="col"><button type="button"
+                                                                class="btn btn-success w-100 fw-bold"
+                                                                ng-click="addItem(item)">+1</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="step-4" role="tabpanel" aria-labelledby="btn-step-4"
+                            tabindex="0">
+                            <div class="row">
+                                <div class="col text-light">
+                                    <h3 class="text-center mb-3">BILLING INFORMATION</h3>
+
+                                    <form name="userForm">
+                                        <div class="row d-flex flex-lg-column flex-column mb-3">
+                                            <div class="col mb-3">
+                                                <label for="fname" class="form-label">Full name:</label>
+                                                <input type="text" class="form-control" placeholder="Fullname"
+                                                    name="fname" maxlength="25" ng-model="fname" required>
+                                                <!-- ERROR FOR FIRST NAME -->
+                                                <span class="text-success" ng-show="userForm.fname.$valid">
+                                                    Looks good!
+                                                </span>
+                                                <span class="text-warning" ng-show="userForm.fname.$dirty">
+                                                    <span ng-show="userForm.fname.$error.required">
+                                                        Fullname is required.
+                                                    </span>
+                                                </span>
+                                                <!-- ERROR FOR FIRST NAME -->
+                                            </div>
+                                            <div class="col mb-3">
+                                                <label for="email" class="form-label">Email:</label>
+                                                <input type="email" class="form-control" placeholder="Enter email"
+                                                    id="email" name="email" ng-model="email" required>
+                                                <!-- ERROR FOR EMAIL -->
+                                                <span class="text-success" ng-show="userForm.email.$valid">
+                                                    Looks good!
+                                                </span>
+                                                <span class="text-warning"
+                                                    ng-show="userForm.email.$dirty && userForm.email.$invalid">
+                                                    <span ng-show="userForm.email.$error.required">
+                                                        Email
+                                                        is required.
+                                                    </span>
+                                                    <span ng-show="userForm.email.$error.email">
+                                                        Invalid
+                                                        email address.
+                                                    </span>
+                                                </span>
+                                                <!-- ERROR FOR EMAIL -->
+                                            </div>
+                                            <div class="col mb-3">
+                                                <label for="phone" class="form-label">Phone
+                                                    number:</label>
+                                                <input type="text" class="form-control" placeholder="Phone number"
+                                                    name="phone" id="phone" maxlength="10" minlength="10"
+                                                    ng-model="phone" pattern="\d+" required>
+                                                <!-- ERROR FOR PHONE NUMBER -->
+                                                <span class="text-success" ng-show="userForm.phone.$valid">
+                                                    Looks good!
+                                                </span>
+                                                <span class="text-warning d-flex flex-column"
+                                                    ng-show="userForm.phone.$dirty">
+                                                    <span ng-show="userForm.phone.$error.required">Phone
+                                                        number is
+                                                        required!</span>
+                                                    <span ng-show="userForm.phone.$error.pattern">Please
+                                                        fill number!</span>
+                                                    <span ng-show="userForm.phone.$invalid">Incorrect
+                                                        phone number!</span>
+                                                </span>
+                                                <!-- ERROR FOR PHONE NUMBER -->
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="row d-lg-flex flex-lg-row flex-column">
+                                                <div class="col col-lg-2">
+                                                    <label class="form-label">Pay by</label>
+                                                </div>
+                                                <div class="col col-lg-10">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" checked name="pay"
+                                                            id="pay1" value="option1">
+                                                        <label class="form-check-label" for="pay1"><img
+                                                                src="https://static.mservice.io/img/logo-momo.png"
+                                                                style="width: 5rem;" class="border rounded bg-light"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="pay"
+                                                            id="pay2" value="option2">
+                                                        <label class="form-check-label" for="pay2"><img
+                                                                src="https://thuthuatmaytinh.vn/wp-content/uploads/2019/02/ZaloPay-logo.png"
+                                                                style="width: 5rem;" class="border rounded bg-light"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="pay"
+                                                            id="pay3" value="option3">
+                                                        <label class="form-check-label" for="pay3"><img
+                                                                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png"
+                                                                style="width: 5rem;" class="border rounded bg-light"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="pay"
+                                                            id="pay4" value="option4">
+                                                        <label class="form-check-label" for="pay4"><img
+                                                                src="https://cdn1.iconfinder.com/data/icons/logos-brands-in-colors/436/Google_Pay_GPay_Logo-512.png"
+                                                                style="width: 5rem;" class="border rounded bg-light"
+                                                                alt=""></label>
+                                                    </div>
+                                                </div>
+                                                <!-- ERROR FOR PAYMENT -->
+
+                                                <span class="text-warning d-flex flex-column"
+                                                    ng-show="userForm.pay.$invalid">
+                                                    <span ng-show="userForm.pay.$error">Please choose 1 payment
+                                                        method!</span>
+                                                </span>
+                                                <!-- ERROR FOR PAYMENT -->
+                                            </div>
+                                        </div>
+                                        <div class="my-3 d-flex justify-content-center">
+                                            <button type="submit" class="btn btn-success text-uppercase fw-bold"
+                                                ng-click="pay(this)">
+                                                <i class="fa-solid fa-check"></i> confirm
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <!-- notification -->
+                                    <div class="toast-container position-fixed end-0 p-3" style="top: 72%;">
+                                        <div id="liveToast" class="toast" role="alert" aria-live="assertive"
+                                            aria-atomic="true">
+                                            <div class="toast-header bg-success text-light" ng-show="PaySuccess">
+                                                <!-- Success -->
+                                                <strong class="me-auto text-uppercase" ng-show="PaySuccess"><i
+                                                        class="fa-regular fa-circle-check fs-5"></i>
+                                                    successful !</strong>
+                                                <small>11 mins ago</small>
+                                                <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="toast-header bg-danger text-light" ng-show="PayFail">
+                                                <!-- Fail -->
+
+                                                <strong class="me-auto text-uppercase align-content-center"
+                                                    ng-show="PayFail"><i class="fa-regular fa-circle-xmark fs-5"></i>
+                                                    failure !</strong>
+                                                <small>11 mins ago</small>
+                                                <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="toast-body bg-light text-dark">
+                                                <div ng-show="PaySuccess">Confirm successful!</div>
+                                                <div ng-show="PayFail">Confirm fail, please check the
+                                                    information!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- notification -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="step-5" role="tabpanel" aria-labelledby="btn-step-5"
+                            tabindex="0">
+                            <div class="row d-lg-flex flex-lg-row flex-column justify-content-center">
+                                <div class="col-lg-4 col">
+                                    <div class="row text-center">
+                                        <h3 class="fw-bold text-uppercase text-light">click me</h3>
+                                        <a class="my-lg-1" href="IMG/4TLIX.png" download>
+                                            <img class="w-75" src="IMG/4TLIX.png" alt="">
+                                        </a>
+                                        <h3 class="fw-bold text-uppercase text-light">to download</h3>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col text-light">
+                                    <h3 class="fw-bold mt-lg-5 text-warning">Your booking process has been completed</h3>
+                                    <div class="row mt-lg-5">
+                                        <h3 class="fw-bold d-flex justify-content-between">Order ID: <span class="text-info" id="OrderID"></span></h3>
+                                        <p class="fs-4">Use this QR code at the counter when coming to checkin at the cinemas.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 overflow-auto" style="height: 42rem;">
+                    <table class="table table-borderless text-light bg-danger h-75">
+                        <tbody ng-show="tks">
+                            <tr>
+                                <th class="text-center text-uppercase fs-1" colspan="4">
+                                    
+                                    <i style="margin-top: 5rem;" class="fa-regular fa-face-grin-stars text-warning"></i>
+                                    <br><h3 class="fw-bold text-warning">booking successful</h3>
+                                    <h5>Click to next step to get your ticket</h5>
+                                    <h5 class="text-uppercase mt-3">thank you for choosing us</h5>
+                                </th>
+                            </tr>
+                        </tbody>
+                        <thead ng-hide="tks">
+                            <tr>
+                                <th class="text-center fs-3" colspan="4"><i class="fa-solid fa-hashtag"></i>
+                                    Your Order</th>
+                            </tr>
+                        </thead>
+                        <tbody  ng-hide="tks">
+                            <tr ng-repeat="item in carts" ng-init="setTotals(item)" class="align-items-center">
+                                <td style="width: 8rem;">{{item.name}}</td>
+                                <td><input class="bg-transparent text-light border-light" style="width: 3rem;"
+                                        type="number" min="0" max="10" ng-change="updatePrice()" ng-model="item.qty">
+                                </td>
+                                <td>{{item.price * item.qty | currency}}</td>
+                                <td>
+                                    <button type="button" class="btn" ng-click="removeItem(item)">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr ng-show="selected.length > 0">
+                                <td colspan="2" class="fw-bold fs-6">Seats Code:</td>
+                                <td>
+                                    <p style="width: 7rem; word-wrap:break-word;" class="text-uppercase flex-wrap">
+                                        <span ng-repeat="item in selected">{{item}}, </span>
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr class="border-top" ng-show="carts.length > 0">
+                                <td colspan="2" class="fw-bold fs-4">Total:</td>
+                                <td class="text-warning fw-bold fs-3">{{totalPrice | currency}}</td>
+                            </tr>
+                            <tr ng-hide="carts.length > 0">
+                                <th class="text-center text-uppercase fs-1" colspan="4">
+                                    <i class="fa-regular fa-face-laugh-squint"></i>
+                                    <br> Waiting <br> for <br> your choice
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End Profile -->
+
+
+        <!-- Footer -->
+        <div class="footer bg-dark w-100 h-100">
+            <div class="row d-flex justify-content-center align-items-center g-2 mx-3">
+                <div class="col-12 col-lg mt-4 mx-4 text-lg-start text-center">
+                    <img src="IMG/4tlix-logo.png" class="w-100 h-100 pb-4" alt="logo">
+                    <ul class="list-unstyled">
+                        <li><a class="text-decoration-none" href="">5th Avenue st, manhattan</a></li>
+                        <li><a class="text-decoration-none" href="">New York, NY 10001</a></li>
+                        <br>
+                        <li><a class="text-decoration-none" href="">Call us: <span class="text-light fs-5">(+01) 202
+                                    342
+                                    6789</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg mt-4 mx-2 text-lg-start text-center">
+                    <h4 class="text-light">Resources</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="text-decoration-none" href="">About</a></li>
+                        <li><a class="text-decoration-none" href="">4TLIX</a></li>
+                        <li><a class="text-decoration-none" href="">Contact Us</a></li>
+                        <li><a class="text-decoration-none" href="">Forums</a></li>
+                        <li><a class="text-decoration-none" href="">Blog</a></li>
+                        <li><a class="text-decoration-none" href="">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg mt-4 mx-2 text-lg-start text-center">
+                    <h4 class="text-light">Legal</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="text-decoration-none" href="">Terms of Use</a></li>
+                        <li><a class="text-decoration-none" href="">Privacy Policy</a></li>
+                        <li><a class="text-decoration-none" href="">Security</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg mt-4 mx-2 text-lg-start text-center">
+                    <h4 class="text-light">Account</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="text-decoration-none" href="">My Account</a></li>
+                        <li><a class="text-decoration-none" href="">Watchlist</a></li>
+                        <li><a class="text-decoration-none" href="">Collections</a></li>
+                        <li><a class="text-decoration-none" href="">User Guide</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg mt-4 mx-2 text-lg-start text-center">
+                    <h4 class="text-light">Newsletter</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="text-decoration-none" href="">Subscribe to our newsletter system now
+                                to get latest news from us.</a></li>
+                        <li>
+                            <div class="form-floating mb-3">
+                                <input style="height: 5%;" type="email" class="form-control bg-dark" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Enter your email</label>
+                            </div>
+                        </li>
+                        <li><a class="text-decoration-none text-danger fw-bold" href="">SUBSCRIBE NOW <i
+                                    class="fa-solid fa-chevron-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer -->
+    </main>
+
+
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Menu</h1>
+            <button type="button" class="btn-close bg-light text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="row d-flex">
+                <div class="col-12 d-flex flex-row-reverse">
+                    <div class="login w-100">
+                        <li class="nav-item list-unstyled ">
+                            <form class="d-md-flex flex-row mb-3">
+                                <div class="input-group">
+                                    <input type="search" class="form-control rounded-start" placeholder="Search"
+                                        aria-label="Search" aria-describedby="search-addon" />
+                                    <button type="button" class="btn btn-danger w-25"><i
+                                            class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                            </form>
+                        </li>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row justify-content-evenly w-100">
+
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">HELP</a>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn text-light fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#Login">
+                                    LOG IN
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-danger rounded-4 fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#SignUp">
+                                    SIGN UP
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex text-center w-100">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-house"></i>
+                                HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-clapperboard"></i>
+                                MOVIES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-star"></i> NEWS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sign In -->
+    <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="width: 85%;">
+                <div class="modal-header border border-0 justify-content-center">
+                    <h1 class="modal-title fs-5 text-uppercase fw-bold" id="exampleModalLabel">Login</h1>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Username</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="**********">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                            <label class="float-end mt-1" for=""><a href=""
+                                    class="text-dark text-decoration-none">Forget password ?</a></label>
+                        </div>
+                        <div class="mb-3 d-flex justify-content-center">
+                            <a class=" btn btn-danger text-light text-decoration-none w-100" href="user.html">Log
+                                In</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-block border border-0">
+                    <div class="mb-3">
+                        <p>Or via social</p>
+                    </div>
+                    <div class="row">
+                        <div class="col"> <button type="button" class="w-100 btn btn-primary fw-bold text-uppercase"><i
+                                    class="fa-brands fa-facebook-f"></i> Facebook</button>
+                        </div>
+                        <div class="col"> <button type="button"
+                                class="w-100 btn btn-info text-light fw-bold text-uppercase"><i
+                                    class="fa-brands fa-twitter"></i> twitter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sign Up -->
+    <div class="modal fade" id="SignUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border border-0 justify-content-center">
+                    <h1 class="modal-title fs-5 text-uppercase fw-bold" id="exampleModalLabel">Sign Up</h1>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Username</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">Fullname</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text-dark">RE-TYPE PASSWORD</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="mt-2 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-danger w-100 text-uppercase">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        $('.btnNext').click(function () {
+            $('#nav-tab > .active').next('button').trigger('click');
+        });
+
+        $('.btnPrev').click(function () {
+            $('#nav-tab > .active').prev('button').trigger('click');
+        });
+    </script>
+
+    <script>
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+        if (toastTrigger) {
+            toastTrigger.addEventListener('click', () => {
+                const toast = new bootstrap.Toast(toastLiveExample)
+
+                toast.show()
+            })
+        }
+    </script>
+
+    <script src="AngularJS/ngApp.js"></script>
+    <script src="AngularJS/Products.js"></script>
+
+</body>
+
+</html>

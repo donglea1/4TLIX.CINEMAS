@@ -11,7 +11,7 @@ app.controller("checkUser", function ($scope, $window) {
         } else {
             $scope.showNotification(false, true);
         }
-    }
+    };
 
     $scope.showNotification = function (PaySuccess, PayFail) {
         $scope.PaySuccess = PaySuccess;
@@ -19,5 +19,6 @@ app.controller("checkUser", function ($scope, $window) {
         const toastLiveExample = document.getElementById('liveToast');
         const toast = new bootstrap.Toast(toastLiveExample);
         toast.show();
-    }
+    };
+
 });

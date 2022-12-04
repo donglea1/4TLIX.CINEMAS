@@ -138,8 +138,9 @@
                         class="nav-link col progress-step step-unselected d-grid align-items-center border-0 my-lg-4">4.
                         Verify order</button>
                     <button id="btn-step-5" data-bs-toggle="tab" data-bs-target="#step-5" type="button" role="tab"
+                        disabled ng-click="getTK()"
                         class="nav-link col progress-step step-unselected d-grid align-items-center border-0 my-lg-4">5.
-                        Pay order</button>
+                        Get ticket</button>
                 </div>
             </div>
 
@@ -411,7 +412,9 @@
                                             <div class="col mb-3">
                                                 <label for="fname" class="form-label">Full name:</label>
                                                 <input type="text" class="form-control" placeholder="Fullname"
-                                                    name="fname" maxlength="25" ng-model="fname" required>
+                                                    name="fname" maxlength="25" ng-model="fname"
+                                                    pattern="^([a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+)$"
+                                                    required>
                                                 <!-- ERROR FOR FIRST NAME -->
                                                 <span class="text-success" ng-show="userForm.fname.$valid">
                                                     Looks good!
@@ -420,6 +423,8 @@
                                                     <span ng-show="userForm.fname.$error.required">
                                                         Fullname is required.
                                                     </span>
+                                                    <span ng-show="userForm.fname.$error.pattern">Full name is
+                                                        incorrect.</span>
                                                 </span>
                                                 <!-- ERROR FOR FIRST NAME -->
                                             </div>
@@ -467,43 +472,22 @@
                                                 <!-- ERROR FOR PHONE NUMBER -->
                                             </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <div class="row d-lg-flex flex-lg-row flex-column">
+                                        <div class="my-3 d-flex justify-content-center">
+                                            <button type="submit" class="btn btn-success text-uppercase fw-bold"
+                                                ng-click="pay(this)" id="pay">
+                                                <i class="fa-solid fa-check"></i> confirm
+                                            </button>
+                                        </div>
+                                        <div class="mb-3" ng-show="tks">
+                                            <div class="row d-lg-flex flex-lg-column flex-column">
                                                 <div class="col col-lg-2">
                                                     <label class="form-label">Pay by</label>
                                                 </div>
                                                 <div class="col col-lg-10">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" checked name="pay"
-                                                            id="pay1" value="option1">
-                                                        <label class="form-check-label" for="pay1"><img
-                                                                src="https://static.mservice.io/img/logo-momo.png"
-                                                                style="width: 5rem;" class="border rounded bg-light"
-                                                                alt=""></label>
-                                                    </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="pay"
-                                                            id="pay2" value="option2">
-                                                        <label class="form-check-label" for="pay2"><img
-                                                                src="https://thuthuatmaytinh.vn/wp-content/uploads/2019/02/ZaloPay-logo.png"
-                                                                style="width: 5rem;" class="border rounded bg-light"
-                                                                alt=""></label>
-                                                    </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="pay"
-                                                            id="pay3" value="option3">
-                                                        <label class="form-check-label" for="pay3"><img
-                                                                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png"
-                                                                style="width: 5rem;" class="border rounded bg-light"
-                                                                alt=""></label>
-                                                    </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="pay"
-                                                            id="pay4" value="option4">
-                                                        <label class="form-check-label" for="pay4"><img
-                                                                src="https://cdn1.iconfinder.com/data/icons/logos-brands-in-colors/436/Google_Pay_GPay_Logo-512.png"
-                                                                style="width: 5rem;" class="border rounded bg-light"
-                                                                alt=""></label>
+                                                    <div class="form-check form-check-inline h-100">
+
+                                                        <div id="paypal-button-container"></div>
+
                                                     </div>
                                                 </div>
                                                 <!-- ERROR FOR PAYMENT -->
@@ -516,12 +500,7 @@
                                                 <!-- ERROR FOR PAYMENT -->
                                             </div>
                                         </div>
-                                        <div class="my-3 d-flex justify-content-center">
-                                            <button type="submit" class="btn btn-success text-uppercase fw-bold"
-                                                ng-click="pay(this)">
-                                                <i class="fa-solid fa-check"></i> confirm
-                                            </button>
-                                        </div>
+
                                     </form>
                                     <!-- notification -->
                                     <div class="toast-container position-fixed end-0 p-3" style="top: 72%;">
@@ -571,10 +550,13 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-8 col text-light">
-                                    <h3 class="fw-bold mt-lg-5 text-warning">Your booking process has been completed</h3>
+                                    <h3 class="fw-bold mt-lg-5 text-warning">Your booking process has been completed
+                                    </h3>
                                     <div class="row mt-lg-5">
-                                        <h3 class="fw-bold d-flex justify-content-between">Order ID: <span class="text-info" id="OrderID"></span></h3>
-                                        <p class="fs-4">Use this QR code at the counter when coming to checkin at the cinemas.</p>
+                                        <h3 class="fw-bold d-flex justify-content-between">Order ID: <span
+                                                class="text-info" id="OrderID"></span></h3>
+                                        <p class="fs-4">Use this QR code at the counter when coming to checkin at the
+                                            cinemas.</p>
                                     </div>
 
                                 </div>
@@ -587,11 +569,11 @@
                         <tbody ng-show="tks">
                             <tr>
                                 <th class="text-center text-uppercase fs-1" colspan="4">
-                                    
+
                                     <i style="margin-top: 5rem;" class="fa-regular fa-face-grin-stars text-warning"></i>
-                                    <br><h3 class="fw-bold text-warning">booking successful</h3>
-                                    <h5>Click to next step to get your ticket</h5>
-                                    <h5 class="text-uppercase mt-3">thank you for choosing us</h5>
+                                    <br>
+                                    <h3 class="fw-bold text-warning">Confirm successful</h3>
+                                    <h4>Please select a payment method to complete the booking process</h4>
                                 </th>
                             </tr>
                         </tbody>
@@ -601,7 +583,7 @@
                                     Your Order</th>
                             </tr>
                         </thead>
-                        <tbody  ng-hide="tks">
+                        <tbody ng-hide="tks">
                             <tr ng-repeat="item in carts" ng-init="setTotals(item)" class="align-items-center">
                                 <td style="width: 8rem;">{{item.name}}</td>
                                 <td><input class="bg-transparent text-light border-light" style="width: 3rem;"
@@ -626,6 +608,7 @@
                             <tr class="border-top" ng-show="carts.length > 0">
                                 <td colspan="2" class="fw-bold fs-4">Total:</td>
                                 <td class="text-warning fw-bold fs-3">{{totalPrice | currency}}</td>
+                                <input type="hidden" id="price" ng-value="totalPrice">
                             </tr>
                             <tr ng-hide="carts.length > 0">
                                 <th class="text-center text-uppercase fs-1" colspan="4">
@@ -896,5 +879,22 @@
     <script src="AngularJS/Products.js"></script>
 
 </body>
+
+<!-- Messenger Plugin chat Code -->
+<div id="fb-root"></div>
+
+<!-- Your Plugin chat code -->
+<div id="fb-customer-chat" class="fb-customerchat"></div>
+
+<script src="JS/Messenger.js"></script>
+<!-- Messenger Plugin chat Code -->
+
+<!-- PayPal -->
+<script
+    src="https://www.paypal.com/sdk/js?client-id=AVukXMBmoFog8J9WlJRoj6ZctojgGJ7__8bM6Xo9I15FhB_GJo51hfvljLAwcqoE7j57EdxkTN9Vjnc4&enable-funding=venmo&currency=USD"
+    data-sdk-integration-source="button-factory"></script>
+
+<script src="JS/PayPal.js"></script>
+<!-- PayPal -->
 
 </html>

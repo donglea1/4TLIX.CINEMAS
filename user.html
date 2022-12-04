@@ -352,8 +352,9 @@
                                 <div class="row d-flex flex-lg-row flex-column mb-3">
                                     <div class="col">
                                         <label for="fname" class="form-label">Full name:</label>
-                                        <input type="text" class="form-control text-info" placeholder="First name"
-                                            name="fname" maxlength="25" ng-model="fname" required>
+                                        <input type="text" class="form-control text-info" placeholder="Full name"
+                                            name="fname" ng-model="fname" maxlength="25" 
+                                            pattern="^([a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+)$" required>
                                         <!-- ERROR FOR FIRST NAME -->
                                         <span class="text-info" ng-show="userForm.fname.$valid">
                                             Looks good!
@@ -361,6 +362,8 @@
                                         <span class="text-warning" ng-show="userForm.fname.$dirty">
                                             <span ng-show="userForm.fname.$error.required">Full name is
                                                 required.</span>
+                                            <span ng-show="userForm.fname.$error.pattern">Full name is
+                                                incorrect.</span>
                                         </span>
                                         <!-- ERROR FOR FIRST NAME -->
                                     </div>
@@ -628,5 +631,36 @@
 
 
 </body>
+
+<!-- Messenger Plugin chat Code -->
+<div id="fb-root"></div>
+
+<!-- Your Plugin chat code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "113984684873961");
+    chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            xfbml: true,
+            version: 'v15.0'
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 
 </html>

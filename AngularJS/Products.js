@@ -1,5 +1,5 @@
 
-app.controller("shopping_cart", function ($scope, $window) {
+app.controller("shopping_cart", function ($scope, $rootScope) {
 
     $scope.performance = [
         { locate: "4TLIX Le Van Viet", time1: "10:00 AM", time2: "12:00 PM", time3: "14:00 AM", time4: "16:00 AM" },
@@ -30,12 +30,12 @@ app.controller("shopping_cart", function ($scope, $window) {
     ];
 
     $scope.foods = [
-        { id: "f1", name: "Combo Special 1", price: 95, qty: 1, img:"https://www.essexcinemas.com/img/largecombodeal600.png" },
-        { id: "f2", name: "Combo Special 2", price: 115, qty: 1, img:"https://pbs.twimg.com/media/D4n8CdeW4AIX6D9.jpg" },
-        { id: "f3", name: "Combo Family", price: 115, qty: 1, img:"https://scontent.fsgn8-3.fna.fbcdn.net/v/t1.6435-9/96838040_2632125600222566_260813199014625280_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9267fe&_nc_ohc=IdDroL3YsyQAX9b9wvE&_nc_ht=scontent.fsgn8-3.fna&oh=00_AfCJwi9wHj6f0nXEAXk19OE2T0IxMu8szASRLFGAuuYG2A&oe=63AEFB2B" },
-        { id: "f4", name: "Combo Couple", price: 115, qty: 1, img:"https://foodie.my/wp-content/uploads/2019/02/51683045_120098665737899_303768539812162557_n.jpg" },
-        { id: "f5", name: "Combo MjoInir", price: 115, qty: 1, img:"https://www.laughingplace.com/w/wp-content/uploads/2022/07/mjolnir-popcorn-container-now-available-for-pre-order-through-amc-theaters-movie-merchandise.jpg" },
-        { id: "f6", name: "Combo Iron Man", price: 135, qty: 1, img:"https://cf.shopee.co.th/file/ab3cba2355ab033cb46189324adfe462" }
+        { id: "f1", name: "Combo Special 1", price: 95, qty: 1, img: "https://www.essexcinemas.com/img/largecombodeal600.png" },
+        { id: "f2", name: "Combo Special 2", price: 115, qty: 1, img: "https://pbs.twimg.com/media/D4n8CdeW4AIX6D9.jpg" },
+        { id: "f3", name: "Combo Family", price: 115, qty: 1, img: "https://scontent.fsgn8-3.fna.fbcdn.net/v/t1.6435-9/96838040_2632125600222566_260813199014625280_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9267fe&_nc_ohc=IdDroL3YsyQAX9b9wvE&_nc_ht=scontent.fsgn8-3.fna&oh=00_AfCJwi9wHj6f0nXEAXk19OE2T0IxMu8szASRLFGAuuYG2A&oe=63AEFB2B" },
+        { id: "f4", name: "Combo Couple", price: 115, qty: 1, img: "https://foodie.my/wp-content/uploads/2019/02/51683045_120098665737899_303768539812162557_n.jpg" },
+        { id: "f5", name: "Combo MjoInir", price: 115, qty: 1, img: "https://www.laughingplace.com/w/wp-content/uploads/2022/07/mjolnir-popcorn-container-now-available-for-pre-order-through-amc-theaters-movie-merchandise.jpg" },
+        { id: "f6", name: "Combo Iron Man", price: 135, qty: 1, img: "https://cf.shopee.co.th/file/ab3cba2355ab033cb46189324adfe462" }
     ];
 
 
@@ -66,7 +66,7 @@ app.controller("shopping_cart", function ($scope, $window) {
 
     $scope.limitSeat = 0;
     $scope.selected = [];
-
+    
     $scope.updatePrice = function () {
         var totalPrice = 0;
         var totalQty = 0;
@@ -74,7 +74,7 @@ app.controller("shopping_cart", function ($scope, $window) {
             totalPrice += ($scope.carts[i].qty) * ($scope.carts[i].price);
             totalQty += ($scope.carts[i].qty);
         }
-        $scope.totalPrice = totalPrice;
+        $rootScope.totalPrice = totalPrice;
         return $scope.limitSeat = totalQty;
     };
 
@@ -88,13 +88,11 @@ app.controller("shopping_cart", function ($scope, $window) {
         $scope.updatePrice();
     }
 
-    
-
     $scope.toggle = function (item, list) {
         var idx = list.indexOf(item);
         if (idx > -1) {
             list.splice(idx, 1);
-        }else {
+        } else {
             list.push(item);
         }
     };
@@ -107,7 +105,6 @@ app.controller("shopping_cart", function ($scope, $window) {
     $scope.getRandomInt = function (max) {
         return Math.floor(Math.random() * max);
     }
-
     $scope.PaySuccess = true;
     $scope.PayFail = false;
     $scope.pay = function (index) {
@@ -120,7 +117,6 @@ app.controller("shopping_cart", function ($scope, $window) {
             $scope.showNotification(false, true);
         }
     }
-
     $scope.showNotification = function (PaySuccess, PayFail) {
         $scope.PaySuccess = PaySuccess;
         $scope.PayFail = PayFail;
@@ -128,13 +124,9 @@ app.controller("shopping_cart", function ($scope, $window) {
         const toast = new bootstrap.Toast(toastLiveExample);
         toast.show();
     }
-
-
     $scope.getRandomInt = function (max) {
         return Math.floor(Math.random() * max);
     }
-    
-
     $scope.PaySuccess = true;
     $scope.PayFail = false;
     $scope.tks = false;
@@ -142,12 +134,10 @@ app.controller("shopping_cart", function ($scope, $window) {
         if (index.userForm.$valid) {
             // Show notification add success
             $scope.showNotification(true, false);
-            document.getElementById("OrderID").innerText = "MV" + $scope.getRandomInt(1000000000);
         } else {
             $scope.showNotification(false, true);
         }
     }
-
     $scope.showNotification = function (PaySuccess, PayFail) {
         $scope.PaySuccess = PaySuccess;
         $scope.PayFail = PayFail;
@@ -155,5 +145,8 @@ app.controller("shopping_cart", function ($scope, $window) {
         const toastLiveExample = document.getElementById('liveToast');
         const toast = new bootstrap.Toast(toastLiveExample);
         toast.show();
+    }
+    $scope.getTK = function () {
+        document.getElementById("OrderID").innerText = "MV" + $scope.getRandomInt(1000000000);
     }
 });
